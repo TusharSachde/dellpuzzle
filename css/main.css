@@ -22,6 +22,10 @@
     src: url(../fonts/MuseoSans_900.otf);
     font-weight: 900;
 }
+@font-face {
+    font-family: 'LCD';
+    src: url(../fonts/lcd.ttf);
+}
 body {
     font-family: 'MuseoSans';
     background-image: url('../img/bg.jpg');
