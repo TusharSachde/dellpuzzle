@@ -22,27 +22,69 @@
     src: url(../fonts/MuseoSans_900.otf);
     font-weight: 900;
 }
-
-body {font-family: 'MuseoSans';background-image: url('../img/bg.jpg');background-size: cover;}
-
-.white-head>* {color: white;text-transform: uppercase;text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35);margin: 0;}
-
-.lower>* {text-transform: none;}
-
-.white-head {margin: 10px 0 60px;}
-
-.white-head h1 {font-size: 75px;font-weight: 700;}
-
-.white-head h2 {font-size: 55px;}
-
-.white-head h3 {font-size: 35px;}
-
-.padding-top {margin: 20% 0 0;}
-
-.dell-input input {border-radius: 0px;margin-bottom: 15px;height: 40px;border: 0px;box-shadow: 4px 3px 7px rgba(0, 0, 0, 0.3);}
-
-.btn-dell {font-weight: 700;padding: 7px 35px;font-size: 18px;box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);}
-
-.bottom {position: absolute;left: 50%;transform: translateX(-50%);width: 100%;bottom: 0;}
-
-.margin-top {margin-top: 15px;}
+body {
+    font-family: 'MuseoSans';
+    background-image: url('../img/bg.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.white-head>* {
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35);
+    margin: 0;
+}
+.lower>* {
+    text-transform: none;
+}
+.white-head {
+    margin: 10px 0 60px;
+}
+.white-head h1 {
+    font-size: 75px;
+    font-weight: 700;
+}
+.white-head h2 {
+    font-size: 55px;
+}
+.white-head h3 {
+    font-size: 35px;
+}
+.padding-top {
+    margin: 20% 0 0;
+}
+.dell-input input {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin-bottom: 15px;
+    height: 40px;
+    border: 0px;
+    -webkit-box-shadow: 4px 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 3px 7px rgba(0, 0, 0, 0.3);
+}
+.btn-dell {
+    font-weight: 700;
+    padding: 7px 35px;
+    font-size: 18px;
+    -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+.bottom {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    bottom: 0;
+}
+.margin-top {
+    margin-top: 15px;
+}
