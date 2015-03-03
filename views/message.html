@@ -1,5 +1,11 @@
 <div class="margin-50 pad-top white-overlay text-center">
-    <canvas class="writehere"></canvas>
+    <script type="text/javascript">
+    $(document).ready(function()
+		{
+            $("#canvase").jqScribble();
+		});
+    </script>
+    <canvas id="canvase" class="writehere"></canvas>
 </div>
 <div class="padding-20 text-center">
     <button class="btn btn-default btn-dell">Submit</button>
