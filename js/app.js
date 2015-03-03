@@ -29,6 +29,18 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/next.html',
             controller: 'next'
         }).
+        when('/jersey', {
+            templateUrl: 'views/jersey.html',
+            controller: 'jersey'
+        }).
+        when('/think', {
+            templateUrl: 'views/think.html',
+            controller: 'think'
+        }).
+        when('/certificate', {
+            templateUrl: 'views/certificate.html',
+            controller: 'certificate'
+        }).
         otherwise({
             redirectTo: '/home'
         });

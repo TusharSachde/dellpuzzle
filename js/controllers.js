@@ -45,6 +45,33 @@ phonecatControllers.controller('next',
         TemplateService.content = 'views/next.html';
     });
 
+phonecatControllers.controller('jersey',
+    function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        $scope.menutitle = NavigationService.makeactive("Match players jersey");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        TemplateService.content = 'views/jersey.html';
+    });
+
+phonecatControllers.controller('think',
+    function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        $scope.menutitle = NavigationService.makeactive("Tell us what you think");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        TemplateService.content = 'views/think.html';
+    });
+
+phonecatControllers.controller('certificate',
+    function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        $scope.menutitle = NavigationService.makeactive("Thank You");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+        TemplateService.content = 'views/certificate.html';
+    });
+
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
     function($scope, TemplateService) {
         $scope.template = TemplateService;
