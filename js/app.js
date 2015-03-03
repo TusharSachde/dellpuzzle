@@ -17,6 +17,18 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/areyou.html',
             controller: 'areyou'
         }).
+        when('/dots', {
+            templateUrl: 'views/dots.html',
+            controller: 'dots'
+        }).
+        when('/message', {
+            templateUrl: 'views/message.html',
+            controller: 'message'
+        }).
+        when('/next', {
+            templateUrl: 'views/next.html',
+            controller: 'next'
+        }).
         otherwise({
             redirectTo: '/home'
         });

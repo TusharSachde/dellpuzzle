@@ -11,6 +11,11 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link:"#/areyou",
         subnav: []
+    },{
+        name: "Connect the dots",
+        classis: "active",
+        link:"#/dots",
+        subnav: []
     }];
 
     return {

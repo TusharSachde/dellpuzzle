@@ -34,6 +34,11 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+.times {
+    font-family: 'LCD';
+    font-size: 40px;
+    line-height: 110%;
+}
 .white-head>* {
     color: white;
     text-transform: uppercase;
@@ -91,4 +96,87 @@ body {
 }
 .margin-top {
     margin-top: 15px;
+}
+.timer {
+    background-color: #0085c3;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    border: 3px solid white;
+    padding: 0 30px;
+}
+.timer h3 {
+    font-size: 24px;
+}
+.timer>* {
+    margin: 0;
+}
+.white-overlay {
+    background-color: rgba(255, 255, 255, 0.55);
+    min-height: 500px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.white-overlay h2 {
+    color: #274679;
+    font-weight: 700;
+    text-align: center;
+    padding: 7px 0;
+    margin: 0;
+}
+.padding-10 {
+    padding: 10px 0;
+}
+.pad-top {
+    padding: 20px 0 0;
+}
+.padding-20 {
+    padding: 20px 0;
+}
+.padding-30 {
+    padding: 30px 0;
+}
+.padding-40 {
+    padding: 40px 0;
+}
+.margin-50 {
+    margin: 50px 0 0;
+}
+.margin-100 {
+    margin: 100px 0 0;
+}
+.writehere {
+    background: url('../img/allthebest.png') no-repeat;
+    width: 576px;
+    height: 564px;
+}
+.middle {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.shadowed>* {
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35);
+}
+.relative {
+    position: relative;
+}
+.blue>* {
+    color: #274679;
+}
+.white-overlay h4 {
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+.white-overlay p {
+    font-size: 34px;
+    margin: 0;
 }
