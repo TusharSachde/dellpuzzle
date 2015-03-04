@@ -2,11 +2,19 @@
     <script type="text/javascript">
     $(document).ready(function()
 		{
-            $("#canvase").jqScribble();
+            $("#canvase").jqScribble({width:"1233",height:"564",backgroundColor:"rgba(0,0,0,0)"});
+        $('.clear').click(function() {
+            /*$('#canvase').data('jqScribble').clear();*/
+            $('#canvase').data('jqScribble').save()
+        });
+        
 		});
     </script>
-    <canvas id="canvase" class="writehere"></canvas>
+    <div class="writehere1" >
+    <canvas id="canvase" width="576px;" class="writehere"></canvas>
+    </div>
 </div>
 <div class="padding-20 text-center">
+    <button class="btn btn-default btn-dell clear">Clear</button>
     <button class="btn btn-default btn-dell">Submit</button>
 </div>

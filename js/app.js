@@ -1,11 +1,5 @@
 // JavaScript Document
-var firstapp = angular.module('firstapp', [
-  'ngRoute',
-  'phonecatControllers',
-  'templateservicemod',
-    'navigationservice',
-    'mydatabase'
-]);
+var firstapp = angular.module('firstapp', [ 'ngRoute','phonecatControllers','templateservicemod', 'navigationservice','mydatabase','ngDraggable' ]);
 
 firstapp.config(['$routeProvider',
   function ($routeProvider) {
