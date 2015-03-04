@@ -1,12 +1,17 @@
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice',]);
 
 phonecatControllers.controller('home',
-    function($scope, TemplateService, NavigationService) {
+    function($scope, TemplateService, NavigationService, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/home.html';
+    $scope.submit = {};
+    $scope.register = function(data)
+    {
+        MyDatabase.signup(data);
+    };
     });
 
 phonecatControllers.controller('areyou',
@@ -28,12 +33,17 @@ phonecatControllers.controller('dots',
     });
 
 phonecatControllers.controller('message',
-    function($scope, TemplateService, NavigationService) {
+    function($scope, TemplateService, NavigationService, $location) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("My message for India");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/message.html';
+    
+        $scope.submitmessage = function()
+        {
+            $location.path("/next");
+        };
     });
 
 phonecatControllers.controller('next',
@@ -46,7 +56,7 @@ phonecatControllers.controller('next',
     });
 
 phonecatControllers.controller('jersey',
-    function($scope, TemplateService, NavigationService, $interval) {
+    function($scope, TemplateService, NavigationService, $interval, $location, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Match players jersey");
         TemplateService.title = $scope.menutitle;
@@ -72,9 +82,14 @@ phonecatControllers.controller('jersey',
                     {name: '8'},
                     {name: '9'}
                 ];
-    
+    $scope.scoreshow = false;
+    var gotothink = function()
+    {
+        $location.path("/think");
+    };
     $scope.getresult = function()
     {
+        $scope.score = 0;
         var score = 0;
         console.log($scope.draggableObjects);
         if($scope.draggableObjects[0].name == '7')
@@ -85,7 +100,11 @@ phonecatControllers.controller('jersey',
         { score = score + 1};
         if($scope.draggableObjects[3].name == '6')
         { score = score + 1};
-        alert(score);
+        $scope.score = score;
+        $scope.scoreshow = !$scope.scoreshow;
+        MyDatabase.setjerseyscore(score);
+        $interval(gotothink, 3000, 1 );
+        //$location.path("/think");
     };
     
     /*$scope.obj1 = {name: 'one'};

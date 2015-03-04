@@ -7,11 +7,11 @@
     <div class="col-md-5">
         <div class="padding-top dell-input">
             <form ng-submit="">
-                <input type="text" class="form-control" placeholder="Name">
-                <input type="email" class="form-control" placeholder="Email Id">
-                <input type="tel" class="form-control" placeholder="Mobile Number">
+                <input type="text" class="form-control" placeholder="Name" ng-model="submit.name">
+                <input type="email" class="form-control" placeholder="Email Id" ng-model="submit.email">
+                <input type="tel" class="form-control" placeholder="Mobile Number" ng-model="submit.phone">
                 <div class="text-center">
-                    <button class="btn btn-default btn-dell" type="submit">Submit</button>
+                    <button class="btn btn-default btn-dell" type="submit" ng-click="register(submit);">Submit</button>
                 </div>
             </form>
         </div>

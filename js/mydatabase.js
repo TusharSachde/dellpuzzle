@@ -2,7 +2,7 @@ var db = openDatabase('dellpuzzle', '1.0', 'Dell DB', 2 * 1024 * 1024);
 
 
 db.transaction(function (tx) {
-    tx.executeSql('CREATE TABLE IF NOT EXISTS USERS (id Integer PRIMARY KEY AUTOINCREMENT, name, email, phone,message, dots, jerseyscore, testtime, certificate)');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS USERS (id Integer, name, email, phone,message, dots, jerseyscore, testtime, certificate)');
     //tx.executeSql('DROP TABLE USERS');
 });
 
@@ -11,15 +11,23 @@ var user = {};
 
 var mydatabase = angular.module('mydatabase', [])
     .factory('MyDatabase', function ($location) {
-        var users = [];
         
-        user = $.jStorage.get("user");
         return {
+            setuser : function()
+            {
+                tx.executeSql('SELECT `message` FROM USERS WHERE `id` ='+user.id, [], function(tx, results) {
+                        var message = results.rows.item(0).message;
+                    }, function(tx, results) {} );
+            },
             signup : function(data)
             {
+                var id = $.jStorage.get("id");
+                id = id + 1;
                 db.transaction(function (tx) {
-    tx.executeSql('INSERT INTO USERS (id, name, email, phone) VALUES ('+data.id+', "'+data.name+'", "'+data.email+'", "'+data.phone+'")');
+    tx.executeSql('INSERT INTO USERS (id, name, email, phone) VALUES ('+id+',"'+data.name+'", "'+data.email+'", "'+data.phone+'")');
 });
+                $.jStorage.set("id", id);
+                $location.path("/areyou");
             },
             setmessage : function(data)
             {
@@ -35,8 +43,9 @@ var mydatabase = angular.module('mydatabase', [])
             },
             setjerseyscore : function(data)
             {
+                var id = $.jStorage.get("id");
                 db.transaction(function (tx) {
-    tx.executeSql('UPDATE USERS SET `jerseyscore`= "'+data+'" WHERE `id` ='+user.id);
+    tx.executeSql('UPDATE USERS SET `jerseyscore`= "'+data+'" WHERE `id` ='+id);
                 });
             },
             settesttime : function(data)

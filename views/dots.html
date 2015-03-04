@@ -4,10 +4,25 @@
         <div class="times">01:45</div>
     </div>
 </div>
-
+<script type="text/javascript">
+    $(document).ready(function()
+		{
+            $("#canvase").jqScribble({width:"1233",height:"564",backgroundColor:"rgba(0,0,0,0)"});
+        $('.clear').click(function() {
+            /*$('#canvase').data('jqScribble').clear();*/
+            $('#canvase').data('jqScribble').save()
+        });
+        
+		});
+    </script>
 <div class="white-overlay">
     <h2>Connect the Dots</h2>
+    <div class="writehere1" >
+    <canvas id="canvase" width="576px;" class="writehere2"></canvas>
+</div>
 </div>
 
 
-<div class="padding-20 text-center"><button class="btn btn-default btn-dell">Submit</button></div>
+<div class="padding-20 text-center"><!--<button class="btn btn-default btn-dell" href="#/message">Submit</button>-->
+<a class="btn btn-default btn-dell" href="#/message">Submit</a>
+</div>
