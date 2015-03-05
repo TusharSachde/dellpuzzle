@@ -1,0 +1,48 @@
+<!--<div class="margin-50 pad-top text-center">
+    <div class="middle shadowed blue">
+        <h4>You can get your review on our 2 in 1 </h4> </br>
+        <p> at the Dell India facebook page</p>
+    </div>-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".btnSave").click(function () {
+            html2canvas($("#savearea"), {
+                onrendered: function (canvas) {
+                    theCanvas = canvas;
+                    document.body.appendChild(canvas);
+                    console.log(canvas);
+                    var dataUrl = canvas.toDataURL();
+                    console.log(dataUrl);
+                    // Convert and download as image
+                    //console.log(Canvas2Image.convertToPNG(canvas, 500, 500));
+                    Canvas2Image.saveAsPNG(canvas);
+                    //$("#img-out").append(canvas);
+                    // Clean up 
+                    document.body.removeChild(canvas);
+                }
+            });
+        });
+    });
+</script>
+<div class="text-center">
+    <h3 style="color:white;">Thankyou for your participation</h3>
+    <p>Visit Dell India facebook page to view your entry</p>
+</div>
+<div class="centerlaptop">
+    <div id="savearea" class="text-center">
+        <div class="laptop">
+            <div class="">
+                <div class="certitext">
+                    <h2>{{name}}</h2>
+                    <p>completed the</br> Dell All Rounder Challenge </br>in 3 mins and 4 seconds</p>
+                </div>
+                <img class="messageimage">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="img-out"></div>
+<div class="padding-20 text-center">
+    <button class="btn btn-default btn-dell clear btnSave">Save</button>
+    <button class="btn btn-default btn-dell clear" ng-click="logout();">Logout</button>
+</div>
