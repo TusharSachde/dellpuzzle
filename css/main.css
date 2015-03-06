@@ -28,7 +28,7 @@
 }
 body {
     font-family: 'MuseoSans';
-    background-image: url('../img/bg.jpg');
+    background-image: url('../img/bg.jpg') no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -147,6 +147,9 @@ body {
 }
 .margin-100 {
     margin: 100px 0 0;
+}
+.no-margin {
+    margin: 0 0;
 }
 .writehere {
     background: url('../img/allthebest.png') no-repeat;
