@@ -1,8 +1,8 @@
 // JavaScript Document
-var firstapp = angular.module('firstapp', [ 'ngRoute','phonecatControllers','templateservicemod', 'navigationservice','mydatabase','ngDraggable' ]);
+var firstapp = angular.module('firstapp', ['ngRoute', 'phonecatControllers', 'templateservicemod', 'navigationservice', 'mydatabase', 'ngDraggable', 'ngTouch','ui.bootstrap']);
 
 firstapp.config(['$routeProvider',
-  function ($routeProvider) {
+    function($routeProvider) {
         $routeProvider.
         when('/home', {
             templateUrl: 'views/template.html',
@@ -32,6 +32,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/think.html',
             controller: 'think'
         }).
+        when('/select', {
+            templateUrl: 'views/select.html',
+            controller: 'select'
+        }).
         when('/certificate', {
             templateUrl: 'views/certificate.html',
             controller: 'certificate'
@@ -39,4 +43,5 @@ firstapp.config(['$routeProvider',
         otherwise({
             redirectTo: '/home'
         });
-  }]);
+    }
+]);

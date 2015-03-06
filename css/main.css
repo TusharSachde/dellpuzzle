@@ -179,17 +179,14 @@ body {
     padding: 23px;
     font-size: xx-large;
     /* vertical-align: middle; */
-    background-color: rgb(51, 250, 68);
+    background-color: rgba(121, 171, 0, 0.9);
     height: 136px;
     width: 28%;
-    -webkit-border-radius: 19px;
-    -moz-border-radius: 19px;
-    border-radius: 19px;
     opacity: 0.8;
     position: fixed;
-    -webkit-box-shadow: 1px 3px 2px rgba(129, 124, 124, 0.77);
-    -moz-box-shadow: 1px 3px 2px rgba(129, 124, 124, 0.77);
-    box-shadow: 1px 3px 2px rgba(129, 124, 124, 0.77);
+    -webkit-box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.4);
     z-index: 10;
     -webkit-transform: translate(128%, -64px);
     -moz-transform: translate(128%, -64px);
@@ -322,7 +319,7 @@ body {
     width: 670px;
     font-size: 15px;
     margin: 10px auto 0;
-    padding: 0px 20px;
+    padding: 0px 0px;
 }
 h3.blued {
     margin: 0 -20px;
@@ -389,4 +386,28 @@ textarea {
 }
 ::-webkit-input-placeholder {
     color: #274679;
+}
+.carousel-control.left,
+.carousel-control.right {
+    background: transparent;
+}
+.carousel-caption {
+    position: static;
+}
+.carousel-indicators {
+    display: none;
+}
+.carousel-control.right {
+    background: url('../img/right.png') no-repeat;
+    background-position-y: 40%;
+    background-position-x: right;
+}
+.carousel-control.left {
+    background: url('../img/left.png') no-repeat;
+    background-position-y: 40%;
+    background-position-x: left;
+}
+.carousel-control .icon-next:before,
+.carousel-control .icon-prev:before {
+    content: '';
 }
