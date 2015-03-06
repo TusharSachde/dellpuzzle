@@ -229,7 +229,7 @@ phonecatControllers.controller('think',
         $scope.think.versatile = 0;
         $scope.think.builtinstylus = 0;
         $scope.think.otheruse = "";
-        $scope.think.recommend = 0;
+        $scope.think.recommend = 1;
         $scope.think.updates = 0;
 
         $scope.thinksubmit = function () {
