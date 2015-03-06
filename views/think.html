@@ -46,8 +46,13 @@
     <textarea ng-model="think.otheruse" placeholder="If other, please specify"></textarea>
 
     <h3 class="blued">Would you recommend Dell Inspiron 2-in-1 to others?</h3>
-    <input type="radio" ng-model="think.recommend" ng-true-value="1" ng-false-value="0">Yes &nbsp;
-    <input type="radio" ng-model="think.recommend" ng-true-value="1" ng-false-value="0">No
+
+    <div class="row">
+        <div class="col-xs-4">
+            <input type="radio" ng-model="think.recommend" ng-true-value="1" ng-false-value="0">Yes</div>
+        <div class="col-xs-8">
+            <input type="radio" ng-model="think.recommend" ng-true-value="1" ng-false-value="0">No</div>
+    </div>
 </div>
 <div class="blue joiner">
     <input type="checkbox" ng-model="think.updates" ng-true-value="1" ng-false-value="0">I would like promotional updates from Dell India

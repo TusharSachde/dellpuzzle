@@ -320,7 +320,7 @@ body {
 }
 .joiner {
     width: 670px;
-    font-size: 14px;
+    font-size: 15px;
     margin: 10px auto 0;
     padding: 0px 20px;
 }
@@ -338,7 +338,7 @@ h3.blued {
 }
 .form-field {
     color: #274679;
-    font-size: 14px;
+    font-size: 15px;
 }
 input[type=checkbox],
 input[type=radio] {
