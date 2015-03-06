@@ -363,14 +363,14 @@ input[type=radio] {
     -moz-box-shadow: 0px 0px 0 2px #274679;
     box-shadow: 0px 0px 0 2px #274679;
 }
-input[type=radio]:focus {
+input[type=radio]:checked {
     background: #274679;
     -webkit-box-shadow: 0px 0px 0px 2px #274679;
     -moz-box-shadow: 0px 0px 0px 2px #274679;
     box-shadow: 0px 0px 0px 2px #274679;
     border-width: 3px;
 }
-input[type=checkbox]:focus {
+input[type=checkbox]:checked {
     background: url('../img/tick.png') no-repeat;
     -webkit-background-size: 90% 90%;
     -moz-background-size: 90%;
