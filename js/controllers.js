@@ -11,6 +11,42 @@ phonecatControllers.controller('home',
         $scope.register = function (data) {
             MyDatabase.signup(data);
         };
+
+        $scope.syncreview = function (userdata) {
+            db.transaction(function (tx) {
+                tx.executeSql('SELECT * FROM REVIEW WHERE `userid` = ' + userdata.id, [], function (tx, results) {
+                    for (var i = 0; i < results.rows.length; i++) {
+                        console.log(results.rows.item(0));
+                        MyDatabase.sync(userdata, results.rows.item(0));
+                        /*return $http.get(adminurl + "welcome/syncreview", {
+                                params: {
+                                    review: results.rows.item(i)
+                                }
+                            });*/
+                        //tx.executeSql('UPDATE USERS SET `sync`= 1 WHERE `id` =' + results.rows.item(i).id);
+                    }
+                }, function (tx, results) {})
+            });
+        };
+
+        $scope.sendtodb = function () {
+            db.transaction(function (tx) {
+                tx.executeSql('SELECT * FROM USERS WHERE `sync` = 0', [], function (tx, results) {
+                    for (var i = 0; i < results.rows.length; i++) {
+                        console.log(results.rows.item(i));
+                        $scope.syncreview(results.rows.item(i));
+                        tx.executeSql('UPDATE `USERS` SET `sync`= 1 WHERE `id` =' + results.rows.item(i).id);
+                        /*return $http.get(adminurl + "welcome/syncuser", {
+                                params: {
+                                    user: results.rows.item(i)
+                                }
+                            });*/
+                    }
+                }, function (tx, results) {})
+            });
+            //MyDatabase.syncuser();
+        };
+
     });
 phonecatControllers.controller('timerCtrl',
     function ($scope, TemplateService, NavigationService, $interval, MyDatabase) {
@@ -47,7 +83,7 @@ phonecatControllers.controller('dots',
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/dots.html';
 
-        $scope.gotomessage = function() {
+        $scope.gotomessage = function () {
             $interval.cancel(stop);
             $location.path('/message');
         };
@@ -158,15 +194,35 @@ phonecatControllers.controller('jersey',
     });
 
 phonecatControllers.controller('think',
-    function ($scope, TemplateService, NavigationService, $location) {
+    function ($scope, TemplateService, NavigationService, $location, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Tell us what you think");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/think.html';
 
+        $scope.think = {};
+        $scope.think.flexibility = 0;
+        $scope.think.lightweight = 0;
+        $scope.think.easytocarry = 0;
+        $scope.think.allfeature = 0;
+        $scope.think.screenclarity = 0;
+        $scope.think.stylus = 0;
+        $scope.think.easytouse = 0;
+        $scope.think.otherfeature = "";
+        $scope.think.travel = 0;
+        $scope.think.harddrive = 0;
+        $scope.think.alluse = 0;
+        $scope.think.versatile = 0;
+        $scope.think.builtinstylus = 0;
+        $scope.think.otheruse = "";
+        $scope.think.recommend = 0;
+        $scope.think.updates = 0;
+
         $scope.thinksubmit = function () {
-            $location.path("/certificate")
+            console.log($scope.think);
+            MyDatabase.saveuserreview($scope.think);
+            $location.path("/certificate");
         };
     });
 
@@ -200,6 +256,22 @@ phonecatControllers.controller('certificate',
 
 
         $scope.logout = function () {
+            html2canvas($("#savearea"), {
+                onrendered: function (canvas) {
+                    theCanvas = canvas;
+                    document.body.appendChild(canvas);
+                    console.log(canvas);
+                    var dataUrl = canvas.toDataURL();
+                    console.log(dataUrl);
+                    MyDatabase.setcertificate(dataUrl);
+                    // Convert and download as image
+                    //console.log(Canvas2Image.convertToPNG(canvas, 500, 500));
+                    //Canvas2Image.saveAsPNG(canvas);
+                    //$("#img-out").append(canvas);
+                    // Clean up 
+                    document.body.removeChild(canvas);
+                }
+            });
             MyDatabase.setmins(0);
             MyDatabase.setseconds(0);
             $location.path("/home");
