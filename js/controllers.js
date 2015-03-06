@@ -298,7 +298,7 @@ phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
 phonecatControllers.controller('select',
     function($scope, TemplateService) {
         $scope.template = TemplateService;
-        $scope.myInterval = 5000;
+        $scope.myInterval = 100000;
         $scope.slides = [{
             "image": "laptop1.png"
         },{
