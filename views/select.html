@@ -6,7 +6,7 @@
         <slide ng-repeat="slide in slides" active="slide.active">
             <img ng-src="img/{{slide.image}}" style="margin:auto;">
             <div class="carousel-caption text-center">
-                <button class="btn btn-default btn-dell">Select</button>
+                <button class="btn btn-default btn-dell" ng-click="gotocertificate($index)">Select</button>
             </div>
         </slide>
     </carousel>
