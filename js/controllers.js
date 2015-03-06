@@ -83,6 +83,19 @@ phonecatControllers.controller('dots',
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/dots.html';
 
+        $scope.mins = MyDatabase.getmins();
+        $scope.seconds = MyDatabase.getseconds();
+        var timero = function () {
+            $scope.seconds = $scope.seconds + 1;
+            if ($scope.seconds == 60) {
+                $scope.seconds = 0;
+                $scope.mins = $scope.mins + 1;
+            }
+            MyDatabase.setmins($scope.mins);
+            MyDatabase.setseconds($scope.seconds);
+        };
+        $interval(timero, 1000);
+
         $scope.gotomessage = function () {
             $interval.cancel(stop);
             $location.path('/message');
@@ -125,31 +138,31 @@ phonecatControllers.controller('jersey',
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/jersey.html';
 
-        /*$scope.seconds = 0;
-        $scope.mins = 0;
-        var timero = function()
-        {
+        $scope.mins = MyDatabase.getmins();
+        $scope.seconds = MyDatabase.getseconds();
+        var timero = function () {
             $scope.seconds = $scope.seconds + 1;
-            if($scope.seconds == 60)
-            {
+            if ($scope.seconds == 60) {
                 $scope.seconds = 0;
                 $scope.mins = $scope.mins + 1;
             }
-        }
-        $interval(timero, 1000);*/
+            MyDatabase.setmins($scope.mins);
+            MyDatabase.setseconds($scope.seconds);
+        };
+        $interval(timero, 1000);
 
         $scope.draggableObjects = [
             {
-                name: '6'
+                name: '18'
             },
             {
-                name: '7'
+                name: '07'
             },
             {
-                name: '8'
+                name: '25'
             },
             {
-                name: '9'
+                name: '18'
             }
                 ];
         $scope.scoreshow = false;
@@ -233,7 +246,11 @@ phonecatControllers.controller('certificate',
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/certificate.html';
-
+    
+        //GET TIME
+        $scope.mins = MyDatabase.getmins();
+        $scope.seconds = MyDatabase.getseconds();
+        //GET MESSAGE
         var id = $.jStorage.get("id");
         db.transaction(function (tx) {
             tx.executeSql('SELECT `message` FROM USERS WHERE `id` =' + id, [], function (tx, results) {
@@ -246,7 +263,7 @@ phonecatControllers.controller('certificate',
                 $(".messageimage").attr("src", $scope.imgsrc);
             }, function (tx, results) {});
         });
-
+        //GET NAME
         db.transaction(function (tx) {
             tx.executeSql('SELECT `name` FROM USERS WHERE `id` =' + id, [], function (tx, results) {
                 $scope.name = results.rows.item(0).name;

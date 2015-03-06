@@ -1,9 +1,4 @@
-<!--<div class="margin-50 pad-top text-center">
-    <div class="middle shadowed blue">
-        <h4>You can get your review on our 2 in 1 </h4> </br>
-        <p> at the Dell India facebook page</p>
-    </div>-->
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function () {
         $(".btnSave").click(function () {
             html2canvas($("#savearea"), {
@@ -23,7 +18,7 @@
             });
         });
     });
-</script>
+</script>-->
 <div class="text-center">
     <h3 style="color:white;">Thankyou for your participation</h3>
     <p>Visit Dell India facebook page to view your entry</p>
@@ -34,7 +29,7 @@
             <div class="">
                 <div class="certitext">
                     <h2>{{name}}</h2>
-                    <p>completed the</br> Dell All Rounder Challenge </br>in 3 mins and 4 seconds</p>
+                    <p>completed the</br> Dell All Rounder Challenge </br>in {{mins}} mins and {{seconds}} seconds</p>
                 </div>
                 <img class="messageimage">
             </div>
@@ -43,6 +38,6 @@
 </div>
 <div id="img-out"></div>
 <div class="padding-20 text-center">
-    <button class="btn btn-default btn-dell clear btnSave">Save</button>
+    <!--<button class="btn btn-default btn-dell clear btnSave">Save</button>-->
     <button class="btn btn-default btn-dell clear" ng-click="logout();">Logout</button>
 </div>
