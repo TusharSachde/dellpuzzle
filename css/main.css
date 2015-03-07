@@ -250,8 +250,13 @@ body {
     opacity: 0.75;
 }
 .jersey .active img {
-    -webkit-filter: drop-shadow(0px 1px 16px rgba(255, 255, 255, 0.9));
+    /*-webkit-filter: drop-shadow(0px 1px 16px rgba(255, 255, 255, 0.9));*/
     opacity: 1;
+}
+.jerseyright {
+    -webkit-filter: drop-shadow(0px 1px 16px rgba(255, 255, 255, 0.9));
+    /*opacity: 1;*/
+    background-color: red;
 }
 /*THE PLACE WHERE ITS BEING DROPPED*/
 
@@ -453,8 +458,4 @@ textarea {
 .carousel-control .icon-next:before,
 .carousel-control .icon-prev:before {
     content: '';
-}
-
-.logoutbtn {
-    margin-top: -77px;
 }

@@ -40,6 +40,10 @@ firstapp.config(['$routeProvider',
             template: certitemplate,
             controller: 'certificate'
         }).
+        when('/sync', {
+            template: synctemplate,
+            controller: 'sync'
+        }).
         otherwise({
             redirectTo: '/home'
         });

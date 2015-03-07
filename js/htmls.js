@@ -8,13 +8,12 @@ hometemplate += "";
 hometemplate += "    <div class=\"row\">";
 hometemplate += "        <div class=\"col-md-5\">";
 hometemplate += "            <div class=\"padding-top dell-input\">";
-hometemplate += "                <form ng-submit=\"\">";
-hometemplate += "                    <input type=\"text\" class=\"form-control\" placeholder=\"Name\" ng-model=\"submit.name\">";
+hometemplate += "                <form ng-submit=\"register(submit);\">";
+hometemplate += "                    <input type=\"text\" required = \"required\" class=\"form-control\" placeholder=\"Name\" ng-model=\"submit.name\">";
 hometemplate += "                    <input type=\"email\" class=\"form-control\" placeholder=\"Email Id\" ng-model=\"submit.email\">";
-hometemplate += "                    <input type=\"tel\" class=\"form-control\" placeholder=\"Mobile Number\" ng-model=\"submit.phone\">";
+hometemplate += "                    <input type=\"text\" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class=\"form-control\" placeholder=\"Mobile Number\" ng-model=\"submit.phone\">";
 hometemplate += "                    <div class=\"text-center\">";
 hometemplate += "                        <button class=\"btn btn-default btn-dell\" type=\"submit\" ng-click=\"register(submit);\">Submit<\/button>";
-hometemplate += "                        <button class=\"btn btn-default btn-dell\" type=\"submit\" ng-click=\"sendtodb();\">DB<\/button>";
 hometemplate += "                    <\/div>";
 hometemplate += "                <\/form>";
 hometemplate += "            <\/div>";
@@ -25,6 +24,8 @@ hometemplate += "        <\/div>";
 hometemplate += "    <\/div>";
 hometemplate += "<\/div>";
 
+
+
 var areyoutemplate="";
 areyoutemplate += "<div class=\"white-head text-center lower\">";
 areyoutemplate += "    <h2>Are you game ?<\/h2>";
@@ -32,7 +33,7 @@ areyoutemplate += "<\/div>";
 areyoutemplate += "";
 areyoutemplate += "<div class=\"bottom\">";
 areyoutemplate += "    <div class=\"white-head text-center lower\">";
-areyoutemplate += "        <h2>Flip, draw, swipe faster and<br>become the Dell All rounder<\/h2>";
+areyoutemplate += "        <h2>Flip, draw, swipe and<br>become the Dell All rounder<\/h2>";
 areyoutemplate += "        <div class=\"text-center margin-top\">";
 areyoutemplate += "            <a class=\"btn btn-default btn-dell\" href=\"#\/dots\">Participate Now<\/a>";
 areyoutemplate += "        <\/div>";
@@ -119,12 +120,14 @@ var jerseytemplate="";
 jerseytemplate += "<div class=\"text-center\">";
 jerseytemplate += "    <div class=\"timer\">";
 jerseytemplate += "        <h3>Time<\/h3>";
-jerseytemplate += "        <div class=\"times\"> {{mins}}:{{seconds}}<\/div>";
+jerseytemplate += "        <div class=\"times\">{{mins}}:{{seconds}}<\/div>";
 jerseytemplate += "    <\/div>";
 jerseytemplate += "<\/div>";
 jerseytemplate += "";
 jerseytemplate += "<div class=\"white-overlay padding-10\">";
-jerseytemplate += "";
+jerseytemplate += "    <div class=\"middle shadowed blue\">";
+jerseytemplate += "        <h4>Match the jersey to the player<\/h4>";
+jerseytemplate += "    <\/div>";
 jerseytemplate += "    <div class=\"row cricketer\">";
 jerseytemplate += "        <div class=\"col-xs-3\">";
 jerseytemplate += "            <img src=\"img\/dhoni.png\" alt=\"\" class=\"img-responsive\">";
@@ -139,45 +142,26 @@ jerseytemplate += "        <div class=\"col-xs-3\">";
 jerseytemplate += "            <img src=\"img\/raina.png\" alt=\"\" class=\"img-responsive\">";
 jerseytemplate += "        <\/div>";
 jerseytemplate += "    <\/div>";
-jerseytemplate += "";
-jerseytemplate += "    <!--<ul class=\"draglist\">";
-jerseytemplate += "        <li ng-repeat=\"obj in draggableObjects\" ng-drop=\"true\" ng-drop-success=\"onDropComplete($index, $data,$event)\">";
-jerseytemplate += "            <div ng-drag=\"true\" ng-drag-data=\"obj\" ng-class=\"obj.name\">";
-jerseytemplate += "                <img src=\"img\/jersey.png\" alt=\"\" class=\"img-responsive\">";
-jerseytemplate += "            <div class=\"jersey-number\">07<\/div>";
-jerseytemplate += "            <\/div>";
-jerseytemplate += "        <\/li>";
-jerseytemplate += "    <\/ul>-->";
 jerseytemplate += "    <div class=\"showscore\" ng-show=\"scoreshow\">";
-jerseytemplate += "        You Scored <\/br> {{score}}\/4";
+jerseytemplate += "        You Scored<\/br>{{score}}\/4";
 jerseytemplate += "    <\/div>";
 jerseytemplate += "    <div class=\"row margin-50 cricketer jersey\">";
 jerseytemplate += "        <div ng-repeat=\"obj in draggableObjects\" class=\"col-xs-3 active\" ng-drop=\"true\" ng-drop-success=\"onDropComplete($index, $data,$event)\">";
 jerseytemplate += "            <div ng-drag=\"true\" class=\"jerseyinside\" ng-drag-data=\"obj\" ng-class=\"obj.name\">";
-jerseytemplate += "                <img src=\"img\/jersey.png\" alt=\"\" class=\"img-responsive\">";
+jerseytemplate += "                <img src=\"img\/jersey.png\" alt=\"\" class=\"img-responsive\" ng-class=\"{jerseyright: obj.value}\">";
 jerseytemplate += "                <div class=\"jersey-number\">{{obj.name}}<\/div>";
 jerseytemplate += "            <\/div>";
 jerseytemplate += "        <\/div>";
-jerseytemplate += "        <!--<div class=\"col-xs-3\" ng-drop=\"true\" ng-drop-success=\"onDropComplete(1, $data,$event)\">";
-jerseytemplate += "            <img src=\"img\/jersey.png\" alt=\"\" class=\"img-responsive\">";
-jerseytemplate += "            <div class=\"jersey-number\">06<\/div>";
-jerseytemplate += "        <\/div>";
-jerseytemplate += "        <div class=\"col-xs-3\" ng-drop=\"true\" ng-drop-success=\"onDropComplete(2, $data,$event)\">";
-jerseytemplate += "            <img src=\"img\/jersey.png\" alt=\"\" class=\"img-responsive\">";
-jerseytemplate += "            <div class=\"jersey-number\">08<\/div>";
-jerseytemplate += "        <\/div>";
-jerseytemplate += "        <div class=\"col-xs-3\" ng-drop=\"true\" ng-drop-success=\"onDropComplete(3, $data,$event)\">";
-jerseytemplate += "            <img src=\"img\/jersey.png\" alt=\"\" class=\"img-responsive\">";
-jerseytemplate += "            <div class=\"jersey-number\">09<\/div>";
-jerseytemplate += "        <\/div>-->";
 jerseytemplate += "    <\/div>";
 jerseytemplate += "";
 jerseytemplate += "<\/div>";
-jerseytemplate += "";
-jerseytemplate += "";
 jerseytemplate += "<div class=\"padding-20 text-center\">";
-jerseytemplate += "    <button class=\"btn btn-default btn-dell\" ng-click=\"getresult()\">Submit<\/button>";
+jerseytemplate += "    <button class=\"btn btn-default btn-dell\" ng-click=\"getresult()\" ng-show=\"showbutton\">Submit<\/button>";
 jerseytemplate += "<\/div>";
+
+
+
+
 
 
 var thinktemplate="";
@@ -267,8 +251,8 @@ selecttemplate += "<\/div>";
 var certitemplate="";
 certitemplate += "";
 certitemplate += "<div class=\"text-center\">";
-certitemplate += "    <h3 style=\"color:white;\">Thankyou for your participation<\/h3>";
-certitemplate += "    <p>Visit Dell India facebook page to view your entry<\/p>";
+certitemplate += "    <h3 style=\"color:white;\">Continue your participation<\/h3>";
+certitemplate += "    <p>Visit www.dellallrounder.in<\/p>";
 certitemplate += "<\/div>";
 certitemplate += "<div class=\"centerlaptop\">";
 certitemplate += "    <div id=\"savearea\" class=\"text-center\">";
@@ -288,3 +272,20 @@ certitemplate += "<div class=\"padding-20 text-center\">";
 certitemplate += "    <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
 certitemplate += "    <button class=\"btn btn-default btn-dell logoutbtn clear\" ng-click=\"logout();\">Logout<\/button>";
 certitemplate += "<\/div>";
+
+
+
+
+
+var synctemplate="";
+synctemplate += "<div class=\"white-overlay margin-100 relative\">";
+synctemplate += "    <div class=\"middle shadowed blue\">";
+synctemplate += "        <h4>Sync all data to the online database<\/h4>";
+synctemplate += "        <p>Please make sure there is Internet connection<\/p>";
+synctemplate += "";
+synctemplate += "        <div class=\"padding-20 text-center\">";
+synctemplate += "            <button class=\"btn btn-default btn-dell\" ng-click=\"sendtodb();\">Sync Now<\/button>";
+synctemplate += "        <\/div>";
+synctemplate += "    <\/div>";
+synctemplate += "<\/div>";
+
