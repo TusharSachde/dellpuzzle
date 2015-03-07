@@ -28,7 +28,8 @@
 }
 body {
     font-family: 'MuseoSans';
-    background-image: url('../img/bg.jpg') no-repeat;
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -161,9 +162,10 @@ body {
     margin: 0 auto;
 }
 .writehere2 {
-    background: url('../img/laptop.png') no-repeat;
+    background: url('../img/dots.png') no-repeat;
     width: 576px !important;
     height: 564px;
+    background-position: top ;
 }
 .certificate {
     background: url('../img/final.png') no-repeat;

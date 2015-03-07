@@ -158,7 +158,7 @@ phonecatControllers.controller('jersey',
         }, {
             name: '25'
         }, {
-            name: '18'
+            name: '03'
         }];
         $scope.scoreshow = false;
         var gotothink = function() {
