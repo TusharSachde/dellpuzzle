@@ -272,7 +272,7 @@ certitemplate += "    <p>Visit Dell India facebook page to view your entry<\/p>"
 certitemplate += "<\/div>";
 certitemplate += "<div class=\"centerlaptop\">";
 certitemplate += "    <div id=\"savearea\" class=\"text-center\">";
-certitemplate += "        <div class=\"laptop\">";
+certitemplate += "        <div class=\"laptop\"  ng-class=\"laptopclass\">";
 certitemplate += "            <div class=\"\">";
 certitemplate += "                <div class=\"certitext\">";
 certitemplate += "                    <h2>{{name}}<\/h2>";
@@ -286,5 +286,5 @@ certitemplate += "<\/div>";
 certitemplate += "<div id=\"img-out\"><\/div>";
 certitemplate += "<div class=\"padding-20 text-center\">";
 certitemplate += "    <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
-certitemplate += "    <button class=\"btn btn-default btn-dell clear\" ng-click=\"logout();\">Logout<\/button>";
+certitemplate += "    <button class=\"btn btn-default btn-dell logoutbtn clear\" ng-click=\"logout();\">Logout<\/button>";
 certitemplate += "<\/div>";

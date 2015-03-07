@@ -454,3 +454,7 @@ textarea {
 .carousel-control .icon-prev:before {
     content: '';
 }
+
+.logoutbtn {
+    margin-top: -77px;
+}
