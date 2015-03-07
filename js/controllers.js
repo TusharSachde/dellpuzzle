@@ -287,6 +287,7 @@ phonecatControllers.controller('certificate',
                 //var ctx = can.getContext('2d');
 
                 $(".messageimage").attr("src", $scope.imgsrc);
+                $(".nameclass").html($scope.uname);
                 $scope.uname = results.rows.item(0).name;
                 console.log($scope.uname);
             }, function (tx, results) {});

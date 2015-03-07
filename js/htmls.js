@@ -264,7 +264,7 @@ certitemplate += "    <div id=\"savearea\" class=\"text-center\">";
 certitemplate += "        <div class=\"laptop\"  ng-class=\"laptopclass\">";
 certitemplate += "            <div class=\"\">";
 certitemplate += "                <div class=\"certitext\">";
-certitemplate += "                    <p style=\"font-size:24px\">{{uname}}<\/p>";
+certitemplate += "                    <p class=\"nameclass\" style=\"font-size:24px\">{{uname}}<\/p>";
 certitemplate += "                    <p>completed the<\/br> Dell All Rounder Challenge <\/br>in {{mins}} mins and {{seconds}} seconds<\/p>";
 certitemplate += "                <\/div>";
 certitemplate += "                <img class=\"messageimage\">";
@@ -277,6 +277,7 @@ certitemplate += "<div class=\"padding-20 text-center\">";
 certitemplate += "    <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
 certitemplate += "    <button class=\"btn btn-default btn-dell clear\" ng-click=\"logout();\">Logout<\/button>";
 certitemplate += "<\/div>";
+
 
 
 
