@@ -5,6 +5,9 @@
     <carousel interval="myInterval">
         <slide ng-repeat="slide in slides" active="slide.active">
             <img ng-src="img/{{slide.image}}" style="margin:auto;">
+            <div class="white-head text-center lower no-margin">
+                <h3>{{slide.mode}}</h3>
+            </div>
             <div class="carousel-caption text-center">
                 <button class="btn btn-default btn-dell" ng-click="gotocertificate($index)">Select</button>
             </div>
