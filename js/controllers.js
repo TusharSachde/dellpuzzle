@@ -7,7 +7,7 @@ phonecatControllers.controller('home',
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/home.html';
-        $scope.submit = {};
+        $scope.submit = {name:"",email:"",phone:""};
         $scope.register = function(data) {
             MyDatabase.signup(data);
         };

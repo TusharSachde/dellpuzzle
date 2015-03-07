@@ -127,16 +127,16 @@ jerseytemplate += "<div class=\"white-overlay padding-10\">";
 jerseytemplate += "";
 jerseytemplate += "    <div class=\"row cricketer\">";
 jerseytemplate += "        <div class=\"col-xs-3\">";
-jerseytemplate += "            <img src=\"img\/virat.png\" alt=\"\" class=\"img-responsive\">";
+jerseytemplate += "            <img src=\"img\/dhoni.png\" alt=\"\" class=\"img-responsive\">";
 jerseytemplate += "        <\/div>";
 jerseytemplate += "        <div class=\"col-xs-3\">";
 jerseytemplate += "            <img src=\"img\/virat.png\" alt=\"\" class=\"img-responsive\">";
 jerseytemplate += "        <\/div>";
 jerseytemplate += "        <div class=\"col-xs-3\">";
-jerseytemplate += "            <img src=\"img\/virat.png\" alt=\"\" class=\"img-responsive\">";
+jerseytemplate += "            <img src=\"img\/dhawan.png\" alt=\"\" class=\"img-responsive\">";
 jerseytemplate += "        <\/div>";
 jerseytemplate += "        <div class=\"col-xs-3\">";
-jerseytemplate += "            <img src=\"img\/virat.png\" alt=\"\" class=\"img-responsive\">";
+jerseytemplate += "            <img src=\"img\/raina.png\" alt=\"\" class=\"img-responsive\">";
 jerseytemplate += "        <\/div>";
 jerseytemplate += "    <\/div>";
 jerseytemplate += "";
@@ -263,6 +263,7 @@ selecttemplate += "<\/div>";
 
 
 
+
 var certitemplate="";
 certitemplate += "";
 certitemplate += "<div class=\"text-center\">";
@@ -287,4 +288,3 @@ certitemplate += "<div class=\"padding-20 text-center\">";
 certitemplate += "    <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
 certitemplate += "    <button class=\"btn btn-default btn-dell clear\" ng-click=\"logout();\">Logout<\/button>";
 certitemplate += "<\/div>";
-
