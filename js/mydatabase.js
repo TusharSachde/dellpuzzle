@@ -56,9 +56,11 @@ var mydatabase = angular.module('mydatabase', [])
                     tx.executeSql('UPDATE USERS SET `jerseyscore`= "' + data + '" WHERE `id` =' + id);
                 });
             },
-            settesttime: function (data) {
+            settesttime: function (min, secs) {
+                var id = $.jStorage.get("id");
+                var time = (min*60) + secs;
                 db.transaction(function (tx) {
-                    tx.executeSql('UPDATE USERS SET `testtime`= "' + data + '" WHERE `id` =' + user.id);
+                    tx.executeSql('UPDATE USERS SET `testtime`= "' + time + '" WHERE `id` =' + id);
                 });
             },
             setcertificate: function (data) {

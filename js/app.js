@@ -5,43 +5,51 @@ firstapp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/home', {
-            templateUrl: 'views/template.html',
+            template: hometemplate,
             controller: 'home'
         }).
         when('/areyou', {
-            templateUrl: 'views/areyou.html',
+            template: areyoutemplate,
             controller: 'areyou'
         }).
         when('/dots', {
-            templateUrl: 'views/dots.html',
+            template: dotstemplate,
             controller: 'dots'
         }).
         when('/message', {
-            templateUrl: 'views/message.html',
+            template: messagetemplate,
             controller: 'message'
         }).
         when('/next', {
-            templateUrl: 'views/next.html',
+            template: nexttemplate,
             controller: 'next'
         }).
         when('/jersey', {
-            templateUrl: 'views/jersey.html',
+            template: jerseytemplate,
             controller: 'jersey'
         }).
         when('/think', {
-            templateUrl: 'views/think.html',
+            template: thinktemplate,
             controller: 'think'
         }).
         when('/select', {
-            templateUrl: 'views/select.html',
+            template: selecttemplate,
             controller: 'select'
         }).
         when('/certificate', {
-            templateUrl: 'views/certificate.html',
+            template: certitemplate,
             controller: 'certificate'
         }).
         otherwise({
             redirectTo: '/home'
         });
+    }
+]);
+firstapp.config( [
+    '$compileProvider',
+    function( $compileProvider )
+    {   
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+        // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
     }
 ]);
