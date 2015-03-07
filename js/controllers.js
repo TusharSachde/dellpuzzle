@@ -243,6 +243,22 @@ phonecatControllers.controller('certificate',
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/certificate.html';
 
+        //GET MODE
+        var mode = $.jStorage.get("mode");
+        //GET CLASS
+        $scope.laptopclass = "lappy";
+        if(mode == 0)
+        {
+            $scope.laptopclass = "lappy";
+        };
+        if(mode == 1)
+        {
+            $scope.laptopclass = "tent";
+        }
+        if(mode == 2)
+        {
+            $scope.laptopclass = "display";
+        }
         //GET TIME
         $scope.mins = MyDatabase.getmins();
         $scope.seconds = MyDatabase.getseconds();
