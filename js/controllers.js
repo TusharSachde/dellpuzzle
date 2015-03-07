@@ -162,6 +162,7 @@ phonecatControllers.controller('jersey',
         }];
         $scope.scoreshow = false;
         var gotothink = function() {
+            MyDatabase.settesttime($scope.mins, $scope.seconds);
             $location.path("/think");
         };
         $scope.getresult = function() {
