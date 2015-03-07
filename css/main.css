@@ -245,18 +245,20 @@ body {
 .active .jersey-number {
     opacity: 1;
 }
-.jersey img {
+.jerseyinside img {
     -webkit-filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.9));
     opacity: 0.75;
+    transition: all 300ms ease;
 }
+/*
 .jersey .active img {
-    /*-webkit-filter: drop-shadow(0px 1px 16px rgba(255, 255, 255, 0.9));*/
+    -webkit-filter: drop-shadow(0px 1px 16px rgba(255, 255, 255, 0.9));
     opacity: 1;
 }
-.jerseyright {
+*/
+img.jerseyright {
     -webkit-filter: drop-shadow(0px 1px 16px rgba(255, 255, 255, 0.9));
-    /*opacity: 1;*/
-    background-color: red;
+    opacity: 1;
 }
 /*THE PLACE WHERE ITS BEING DROPPED*/
 

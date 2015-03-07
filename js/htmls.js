@@ -125,7 +125,7 @@ jerseytemplate += "    <\/div>";
 jerseytemplate += "<\/div>";
 jerseytemplate += "";
 jerseytemplate += "<div class=\"white-overlay padding-10\">";
-jerseytemplate += "    <div class=\"middle shadowed blue\">";
+jerseytemplate += "    <div class=\"text-center shadowed blue\">";
 jerseytemplate += "        <h4>Match the jersey to the player<\/h4>";
 jerseytemplate += "    <\/div>";
 jerseytemplate += "    <div class=\"row cricketer\">";
@@ -158,6 +158,7 @@ jerseytemplate += "<\/div>";
 jerseytemplate += "<div class=\"padding-20 text-center\">";
 jerseytemplate += "    <button class=\"btn btn-default btn-dell\" ng-click=\"getresult()\" ng-show=\"showbutton\">Submit<\/button>";
 jerseytemplate += "<\/div>";
+
 
 
 
