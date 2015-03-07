@@ -239,6 +239,9 @@ selecttemplate += "<div class=\"container\">";
 selecttemplate += "    <carousel interval=\"myInterval\">";
 selecttemplate += "        <slide ng-repeat=\"slide in slides\" active=\"slide.active\">";
 selecttemplate += "            <img ng-src=\"img\/{{slide.image}}\" style=\"margin:auto;\">";
+selecttemplate += "            <div class=\"white-head text-center lower no-margin\">";
+selecttemplate += "                <h3>{{slide.mode}}<\/h3>";
+selecttemplate += "            <\/div>";
 selecttemplate += "            <div class=\"carousel-caption text-center\">";
 selecttemplate += "                <button class=\"btn btn-default btn-dell\" ng-click=\"gotocertificate($index)\">Select<\/button>";
 selecttemplate += "            <\/div>";
@@ -249,18 +252,19 @@ selecttemplate += "<\/div>";
 
 
 
+
 var certitemplate="";
-certitemplate += "";
-certitemplate += "<div class=\"text-center\">";
-certitemplate += "    <h3 style=\"color:white;\">Continue your participation<\/h3>";
-certitemplate += "    <p>Visit www.dellallrounder.in<\/p>";
-certitemplate += "<\/div>";
+certitemplate += "<div class=\"white-head text-center lower no-margin\">";
+certitemplate += "    <h3>Continue your participation<\/h3>";
+certitemplate += "    <div class=\"blue\">";
+certitemplate += "        <h4>Visit www.dellallrounder.in<\/h4>";
+certitemplate += "    <\/div>";
 certitemplate += "<div class=\"centerlaptop\">";
 certitemplate += "    <div id=\"savearea\" class=\"text-center\">";
 certitemplate += "        <div class=\"laptop\"  ng-class=\"laptopclass\">";
 certitemplate += "            <div class=\"\">";
 certitemplate += "                <div class=\"certitext\">";
-certitemplate += "                    <h2>{{name}}<\/h2>";
+certitemplate += "                    <p style=\"font-size:24px\">{{uname}}<\/p>";
 certitemplate += "                    <p>completed the<\/br> Dell All Rounder Challenge <\/br>in {{mins}} mins and {{seconds}} seconds<\/p>";
 certitemplate += "                <\/div>";
 certitemplate += "                <img class=\"messageimage\">";
@@ -271,8 +275,10 @@ certitemplate += "<\/div>";
 certitemplate += "<div id=\"img-out\"><\/div>";
 certitemplate += "<div class=\"padding-20 text-center\">";
 certitemplate += "    <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
-certitemplate += "    <button class=\"btn btn-default btn-dell logoutbtn clear\" ng-click=\"logout();\">Logout<\/button>";
+certitemplate += "    <button class=\"btn btn-default btn-dell clear\" ng-click=\"logout();\">Logout<\/button>";
 certitemplate += "<\/div>";
+
+
 
 
 

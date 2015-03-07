@@ -31,6 +31,7 @@ var mydatabase = angular.module('mydatabase', [])
                     tx.executeSql('INSERT INTO USERS (id, name, email, phone, sync) VALUES (' + id + ',"' + data.name + '", "' + data.email + '", "' + data.phone + '", 0)');
                 });
                 $.jStorage.set("id", id);
+                console.log("inserted");
                 $location.path("/areyou");
             },
             saveuserreview: function (data) {

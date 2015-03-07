@@ -28,7 +28,7 @@ phonecatControllers.controller('home',
 
 
     });
-phonecatControllers.controller('timerCtrl',
+/*phonecatControllers.controller('timerCtrl',
     function ($scope, TemplateService, NavigationService, $interval, MyDatabase) {
 
         $scope.mins = MyDatabase.getmins();
@@ -43,7 +43,7 @@ phonecatControllers.controller('timerCtrl',
             MyDatabase.setseconds($scope.seconds);
         };
         $interval(timero, 1000);
-    });
+    });*/
 
 
 phonecatControllers.controller('areyou',
@@ -63,21 +63,23 @@ phonecatControllers.controller('dots',
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/dots.html';
 
-        $scope.mins = MyDatabase.getmins();
-        $scope.seconds = MyDatabase.getseconds();
+        $scope.mins = 0; //MyDatabase.getmins();
+        $scope.seconds = 0; //MyDatabase.getseconds();
         var timero = function () {
             $scope.seconds = $scope.seconds + 1;
             if ($scope.seconds == 60) {
                 $scope.seconds = 0;
                 $scope.mins = $scope.mins + 1;
             }
-            MyDatabase.setmins($scope.mins);
-            MyDatabase.setseconds($scope.seconds);
+            //MyDatabase.setmins($scope.mins);
+            //MyDatabase.setseconds($scope.seconds);
+            $.jStorage.set("mins", $scope.mins);
+            $.jStorage.set("seconds", $scope.seconds);
         };
-        $interval(timero, 1000);
+        var timerinterval = $interval(timero, 1000);
 
         $scope.gotomessage = function () {
-            $interval.cancel(stop);
+            $interval.cancel(timerinterval);
             $location.path('/message');
         };
     });
@@ -118,18 +120,20 @@ phonecatControllers.controller('jersey',
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/jersey.html';
 
-        $scope.mins = MyDatabase.getmins();
-        $scope.seconds = MyDatabase.getseconds();
+        $scope.mins = $.jStorage.get("mins"); //MyDatabase.getmins();
+        $scope.seconds = $.jStorage.get("seconds"); //MyDatabase.getseconds();
         var timero = function () {
             $scope.seconds = $scope.seconds + 1;
             if ($scope.seconds == 60) {
                 $scope.seconds = 0;
                 $scope.mins = $scope.mins + 1;
             }
-            MyDatabase.setmins($scope.mins);
-            MyDatabase.setseconds($scope.seconds);
+            //MyDatabase.setmins($scope.mins);
+            //MyDatabase.setseconds($scope.seconds);
+            $.jStorage.set("mins", $scope.mins);
+            $.jStorage.set("seconds", $scope.seconds);
         };
-        $interval(timero, 1000);
+        var timerinterval = $interval(timero, 1000);
 
         $scope.draggableObjects = [{
             name: '03',
@@ -147,6 +151,7 @@ phonecatControllers.controller('jersey',
         $scope.scoreshow = false;
         var gotothink = function () {
             MyDatabase.settesttime($scope.mins, $scope.seconds);
+            $interval.cancel(timerinterval);
             $location.path("/think");
         };
 
@@ -250,6 +255,8 @@ phonecatControllers.controller('certificate',
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/certificate.html';
 
+    
+        $scope.uname = "";
         //GET MODE
         var mode = $.jStorage.get("mode");
         //GET CLASS
@@ -264,27 +271,37 @@ phonecatControllers.controller('certificate',
             $scope.laptopclass = "display";
         }
         //GET TIME
-        $scope.mins = MyDatabase.getmins();
-        $scope.seconds = MyDatabase.getseconds();
+        $scope.mins = $.jStorage.get("mins"); //MyDatabase.getmins();
+        $scope.seconds = $.jStorage.get("seconds"); //MyDatabase.getseconds();
         //GET MESSAGE
         var id = $.jStorage.get("id");
         db.transaction(function (tx) {
-            tx.executeSql('SELECT `message` FROM USERS WHERE `id` =' + id, [], function (tx, results) {
+            tx.executeSql('SELECT `message`, `name` FROM USERS WHERE `id` =' + id, [], function (tx, results) {
+                //$scope.uname = results.rows.item(0).name;
+                //console.log($scope.uname);
                 $scope.imgsrc = results.rows.item(0).message;
+                console.log($scope.imgsrc);
                 //document.getElementById('messimg').src = $scope.imgsrc;
 
                 //var can = document.getElementById('canvas');
                 //var ctx = can.getContext('2d');
 
                 $(".messageimage").attr("src", $scope.imgsrc);
+                $scope.uname = results.rows.item(0).name;
+                console.log($scope.uname);
             }, function (tx, results) {});
         });
+        
         //GET NAME
+    $scope.name = function() {
         db.transaction(function (tx) {
             tx.executeSql('SELECT `name` FROM USERS WHERE `id` =' + id, [], function (tx, results) {
-                $scope.name = results.rows.item(0).name;
+                $scope.uname = results.rows.item(0).name;
+                console.log($scope.uname);
+                return $scope.uname;
             }, function (tx, results) {});
         });
+    };
 
 
 
@@ -305,8 +322,10 @@ phonecatControllers.controller('certificate',
                     document.body.removeChild(canvas);
                 }
             });
-            MyDatabase.setmins(0);
-            MyDatabase.setseconds(0);
+            //MyDatabase.setmins(0);
+            //MyDatabase.setseconds(0);
+            $.jStorage.set("mins", 0);
+            $.jStorage.set("seconds", 0);
             $location.path("/home");
         };
     });
