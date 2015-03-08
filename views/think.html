@@ -4,31 +4,35 @@
 
 <div class="white-overlay thinkpage form-field">
 
-    <div class="row">
+    <div class="row" style="padding-top: 30px;margin-top:30px;">
         <div class="col-md-6">
-           
+
             <div class="innerthink">
                 <h3 class="blued1">How would the 2-in-1 be useful to you?</h3>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <input type="checkbox" ng-model="think.travel" ng-true-value="1" ng-false-value="0">Convienient for travel
-                        <br>
-                        <input type="checkbox" ng-model="think.harddrive" ng-true-value="1" ng-false-value="0">Plenty of hard drive space
-                        <br>
-                        <input type="checkbox" ng-model="think.alluse" ng-true-value="1" ng-false-value="0">All of above
+                <div class="innerform">
+                    <div class="innercheckbox">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="checkbox" ng-model="think.travel" ng-true-value="1" ng-false-value="0">Convienient for travel
+                                <br>
+                                <input type="checkbox" ng-model="think.harddrive" ng-true-value="1" ng-false-value="0">Plenty of hard drive space
+                                <br>
+                                <input type="checkbox" ng-model="think.alluse" ng-true-value="1" ng-false-value="0">All of above
+                            </div>
+
+                            <div class="col-xs-6">
+                                <input type="checkbox" ng-model="think.versatile" ng-true-value="1" ng-false-value="0">Versatile device for work and home
+                                <br>
+                                <input type="checkbox" ng-model="think.builtinstylus" ng-true-value="1" ng-false-value="0">Freedom of built-in stylus
+                                <br>
+                                <input type="checkbox" ng-model="think.other" ng-true-value="1" ng-false-value="0">Other
+                            </div>
+                        </div>
                     </div>
-                
-                    <div class="col-xs-6">
-                        <input type="checkbox" ng-model="think.versatile" ng-true-value="1" ng-false-value="0">Versatile device for work and home
-                        <br>
-                        <input type="checkbox" ng-model="think.builtinstylus" ng-true-value="1" ng-false-value="0">Freedom of built-in stylus
-                        <br>
-                        <input type="checkbox" ng-model="think.other" ng-true-value="1" ng-false-value="0">Other
-                    </div>
+                    <textarea ng-model="think.otheruse" placeholder="If other, please specify"></textarea>
+
                 </div>
-                <textarea ng-model="think.otheruse" placeholder="If other, please specify"></textarea>
                 <h3 class="blued1">Would you recommend Dell Inspiron 2-in-1 to others?</h3>
-                
                 <div class="row">
                     <div class="col-xs-4">
                         <input type="radio" ng-model="think.recommend" ng-value="1" name="recommend">Yes</div>
@@ -36,40 +40,44 @@
                         <input type="radio" ng-model="think.recommend" ng-value="0" name="recommend">No</div>
                 </div>
             </div>
-            
+
+
         </div>
         <div class="col-md-6">
             <div class="innerthink">
                 <h3 class="blued1">Which is the best feature of the 2-in-1?</h3>
-                <div class="innercheckbox">
-                    s<div class="row">
-                        <div class="col-md-6">
-                            <input type="checkbox" ng-model="think.flexibility" ng-true-value="1" ng-false-value="0">Flexibility
-                            <br>
-                            <input type="checkbox" ng-model="think.lightweight" ng-true-value="1" ng-false-value="0">Light weight
-                            <br>
-                            <input type="checkbox" ng-model="think.easytocarry" ng-true-value="1" ng-false-value="0">East to carry
-                            <br>
-                            <input type="checkbox" ng-model="think.allfeature" ng-true-value="1" ng-false-value="0">All of above
-                        </div>
-                    
-                        <div class="col-md-6">
-                            <input type="checkbox" ng-model="think.screenclarity" ng-true-value="1" ng-false-value="0">Screen clarity and touch pad
-                            <br>
-                            <input type="checkbox" ng-model="think.stylus" ng-true-value="1" ng-false-value="0">Stylus
-                            <br>
-                            <input type="checkbox" ng-model="think.easytouse" ng-true-value="1" ng-false-value="0">Easy to use
-                            <br>
-                            <input type="checkbox" ng-model="think.other" ng-true-value="1" ng-false-value="0">Other
+                <div class="innerform">
+                    <div class="innercheckbox">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="checkbox" ng-model="think.flexibility" ng-true-value="1" ng-false-value="0">Flexibility
+                                <br>
+                                <input type="checkbox" ng-model="think.lightweight" ng-true-value="1" ng-false-value="0">Light weight
+                                <br>
+                                <input type="checkbox" ng-model="think.easytocarry" ng-true-value="1" ng-false-value="0">East to carry
+                                <br>
+                                <input type="checkbox" ng-model="think.allfeature" ng-true-value="1" ng-false-value="0">All of above
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="checkbox" ng-model="think.screenclarity" ng-true-value="1" ng-false-value="0">Screen clarity and touch pad
+                                <br>
+                                <input type="checkbox" ng-model="think.stylus" ng-true-value="1" ng-false-value="0">Stylus
+                                <br>
+                                <input type="checkbox" ng-model="think.easytouse" ng-true-value="1" ng-false-value="0">Easy to use
+                                <br>
+                                <input type="checkbox" ng-model="think.other" ng-true-value="1" ng-false-value="0">Other
+                            </div>
                         </div>
                     </div>
+                    <textarea ng-model="think.otherfeature" placeholder="If other, please specify"></textarea>
+                    <div class="blue joiner othercheckbox">
+                        <h3><input type="checkbox" ng-model="think.updates" ng-true-value="1" ng-false-value="0">I would like promotional updates from Dell India</h3>
+                    </div>
                 </div>
-                <textarea ng-model="think.otherfeature" placeholder="If other, please specify"></textarea>
-                
-                
-                <div class="blue joiner">
-                    <input type="checkbox" ng-model="think.updates" ng-true-value="1" ng-false-value="0">I would like promotional updates from Dell India
-                </div>
+
+
+
             </div>
         </div>
     </div>

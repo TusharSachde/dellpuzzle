@@ -29,7 +29,7 @@ firstapp.config(['$routeProvider',
             controller: 'jersey'
         }).
         when('/think', {
-            templateUrl: "views/think.html",
+            template: thinktemplate,
             controller: 'think'
         }).
         when('/select', {

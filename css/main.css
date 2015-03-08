@@ -34,6 +34,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    overflow-x: hidden;
 }
 .times {
     font-family: 'LCD';
@@ -489,16 +490,28 @@ textarea {
 .white-overlay.thinkpage {
     width: 1200px;
     margin: 0 auto;
-    padding: 20px 30px;
 }
 .container-fluid {
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
-.thinkpage h3 
-{
-    font-size:20px;
+.thinkpage h3 {
+    font-size: 18px;
+    font-weight: 700;
 }
-.thinkpage .innerthink 
-{
-    font-size:14px;
+.thinkpage .innerthink {
+    font-size: 14px;
+    line-height: 230%;
+    padding: 20px;
+}
+.thinkpage .innercheckbox {
+    height: 137px;
+}
+.thinkpage .innerform {
+    padding-left: 10px;
+}
+.innerform textarea {
+    margin-bottom: 70px;
+}
+.thinkpage>.row>.col-md-6+.col-md-6 {
+    border-left: 1px dotted;
 }
