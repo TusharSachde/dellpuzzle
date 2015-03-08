@@ -491,3 +491,14 @@ textarea {
     margin: 0 auto;
     padding: 20px 30px;
 }
+.container-fluid {
+    overflow-y: hidden;
+}
+.thinkpage h3 
+{
+    font-size:20px;
+}
+.thinkpage .innerthink 
+{
+    font-size:14px;
+}

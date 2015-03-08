@@ -13,7 +13,7 @@ firstapp.config(['$routeProvider',
             controller: 'areyou'
         }).
         when('/dots', {
-            templateUrl: dotstemplate,
+            template: dotstemplate,
             controller: 'dots'
         }).
         when('/message', {
