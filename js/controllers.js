@@ -1,7 +1,7 @@
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice']);
 
 phonecatControllers.controller('home',
-    function ($scope, TemplateService, NavigationService, MyDatabase) {
+    function($scope, TemplateService, NavigationService, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
@@ -12,11 +12,11 @@ phonecatControllers.controller('home',
             email: "",
             phone: ""
         };
-        $scope.register = function (data) {
+        $scope.register = function(data) {
             MyDatabase.signup(data);
         };
 
-        $scope.isNumberKey = function (evt) {
+        $scope.isNumberKey = function(evt) {
             var charCode = (evt.which) ? evt.which : event.keyCode
             if (charCode > 31 && (charCode < 48 || charCode > 57))
                 return false;
@@ -47,7 +47,7 @@ phonecatControllers.controller('home',
 
 
 phonecatControllers.controller('areyou',
-    function ($scope, TemplateService, NavigationService) {
+    function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Are you Ready");
         TemplateService.title = $scope.menutitle;
@@ -56,16 +56,22 @@ phonecatControllers.controller('areyou',
     });
 
 phonecatControllers.controller('dots',
-    function ($scope, TemplateService, NavigationService, $interval, $location, MyDatabase) {
+    function($scope, TemplateService, NavigationService, $interval, $location, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Connect the dots");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/dots.html';
+        $scope.connectnumber = 1;
+        $scope.changenumber = function() {
+            if ($scope.connectnumber < 21) {
+                $scope.connectnumber++;
+            }
+        };
 
         $scope.mins = 0; //MyDatabase.getmins();
         $scope.seconds = 0; //MyDatabase.getseconds();
-        var timero = function () {
+        var timero = function() {
             $scope.seconds = $scope.seconds + 1;
             if ($scope.seconds == 60) {
                 $scope.seconds = 0;
@@ -78,21 +84,21 @@ phonecatControllers.controller('dots',
         };
         var timerinterval = $interval(timero, 1000);
 
-        $scope.gotomessage = function () {
+        $scope.gotomessage = function() {
             $interval.cancel(timerinterval);
             $location.path('/message');
         };
     });
 
 phonecatControllers.controller('message',
-    function ($scope, TemplateService, NavigationService, $location, MyDatabase) {
+    function($scope, TemplateService, NavigationService, $location, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("My message for India");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/message.html';
 
-        $scope.submitmessage = function () {
+        $scope.submitmessage = function() {
             var canvas = document.getElementById("canvase");
             var dataUrl = canvas.toDataURL();
             console.log(dataUrl);
@@ -104,7 +110,7 @@ phonecatControllers.controller('message',
     });
 
 phonecatControllers.controller('next',
-    function ($scope, TemplateService, NavigationService) {
+    function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Move to the next level");
         TemplateService.title = $scope.menutitle;
@@ -113,7 +119,7 @@ phonecatControllers.controller('next',
     });
 
 phonecatControllers.controller('jersey',
-    function ($scope, TemplateService, NavigationService, $interval, $location, MyDatabase) {
+    function($scope, TemplateService, NavigationService, $interval, $location, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Match players jersey");
         TemplateService.title = $scope.menutitle;
@@ -122,7 +128,7 @@ phonecatControllers.controller('jersey',
 
         $scope.mins = $.jStorage.get("mins"); //MyDatabase.getmins();
         $scope.seconds = $.jStorage.get("seconds"); //MyDatabase.getseconds();
-        var timero = function () {
+        var timero = function() {
             $scope.seconds = $scope.seconds + 1;
             if ($scope.seconds == 60) {
                 $scope.seconds = 0;
@@ -149,7 +155,7 @@ phonecatControllers.controller('jersey',
             value: false
         }];
         $scope.scoreshow = false;
-        var gotothink = function () {
+        var gotothink = function() {
             MyDatabase.settesttime($scope.mins, $scope.seconds);
             $interval.cancel(timerinterval);
             $location.path("/think");
@@ -157,7 +163,7 @@ phonecatControllers.controller('jersey',
 
         //SUBMIT BUTTON
         $scope.showbutton = true;
-        $scope.getresult = function () {
+        $scope.getresult = function() {
             $scope.showbutton = false;
             $scope.score = 0;
             var score = 0;
@@ -181,7 +187,7 @@ phonecatControllers.controller('jersey',
             //$location.path("/think");
         };
 
-        $scope.onDropComplete = function (index, obj, evt) {
+        $scope.onDropComplete = function(index, obj, evt) {
             var otherObj = $scope.draggableObjects[index];
             var otherIndex = $scope.draggableObjects.indexOf(obj);
             $scope.draggableObjects[index] = obj;
@@ -190,24 +196,24 @@ phonecatControllers.controller('jersey',
             if ($scope.draggableObjects[0].name == '07') {
                 $scope.draggableObjects[0].value = true;
                 console.log($scope.draggableObjects[0].value);
-            }else {
+            } else {
                 $scope.draggableObjects[0].value = false;
             };
             if ($scope.draggableObjects[1].name == '18') {
                 $scope.draggableObjects[1].value = true;
                 console.log($scope.draggableObjects[1].value);
-            }else {
+            } else {
                 $scope.draggableObjects[1].value = false;
             };;
             if ($scope.draggableObjects[2].name == '25') {
                 $scope.draggableObjects[2].value = true;
                 console.log($scope.draggableObjects[2].value);
-            }else {
+            } else {
                 $scope.draggableObjects[2].value = false;
             };;
             if ($scope.draggableObjects[3].name == '03') {
                 $scope.draggableObjects[3].value = true;
-            }else {
+            } else {
                 $scope.draggableObjects[3].value = false;
             };;
         };
@@ -215,7 +221,7 @@ phonecatControllers.controller('jersey',
     });
 
 phonecatControllers.controller('think',
-    function ($scope, TemplateService, NavigationService, $location, MyDatabase) {
+    function($scope, TemplateService, NavigationService, $location, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Tell us what you think");
         TemplateService.title = $scope.menutitle;
@@ -240,7 +246,7 @@ phonecatControllers.controller('think',
         $scope.think.recommend = 1;
         $scope.think.updates = 1;
 
-        $scope.thinksubmit = function () {
+        $scope.thinksubmit = function() {
             console.log($scope.think);
             MyDatabase.saveuserreview($scope.think);
             $location.path("/select");
@@ -248,14 +254,14 @@ phonecatControllers.controller('think',
     });
 
 phonecatControllers.controller('certificate',
-    function ($scope, TemplateService, NavigationService, $location, MyDatabase) {
+    function($scope, TemplateService, NavigationService, $location, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Thank You");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/certificate.html';
 
-    
+
         $scope.uname = "";
         //GET MODE
         var mode = $.jStorage.get("mode");
@@ -275,8 +281,8 @@ phonecatControllers.controller('certificate',
         $scope.seconds = $.jStorage.get("seconds"); //MyDatabase.getseconds();
         //GET MESSAGE
         var id = $.jStorage.get("id");
-        db.transaction(function (tx) {
-            tx.executeSql('SELECT `message`, `name` FROM USERS WHERE `id` =' + id, [], function (tx, results) {
+        db.transaction(function(tx) {
+            tx.executeSql('SELECT `message`, `name` FROM USERS WHERE `id` =' + id, [], function(tx, results) {
                 //$scope.uname = results.rows.item(0).name;
                 //console.log($scope.uname);
                 $scope.imgsrc = results.rows.item(0).message;
@@ -287,29 +293,29 @@ phonecatControllers.controller('certificate',
                 //var ctx = can.getContext('2d');
 
                 $(".messageimage").attr("src", $scope.imgsrc);
-                
+
                 $scope.uname = results.rows.item(0).name;
                 $(".nameclass").html($scope.uname);
                 console.log($scope.uname);
-            }, function (tx, results) {});
+            }, function(tx, results) {});
         });
-        
+
         //GET NAME
-    $scope.name = function() {
-        db.transaction(function (tx) {
-            tx.executeSql('SELECT `name` FROM USERS WHERE `id` =' + id, [], function (tx, results) {
-                $scope.uname = results.rows.item(0).name;
-                console.log($scope.uname);
-                return $scope.uname;
-            }, function (tx, results) {});
-        });
-    };
+        $scope.name = function() {
+            db.transaction(function(tx) {
+                tx.executeSql('SELECT `name` FROM USERS WHERE `id` =' + id, [], function(tx, results) {
+                    $scope.uname = results.rows.item(0).name;
+                    console.log($scope.uname);
+                    return $scope.uname;
+                }, function(tx, results) {});
+            });
+        };
 
 
 
-        $scope.logout = function () {
+        $scope.logout = function() {
             html2canvas($("#savearea"), {
-                onrendered: function (canvas) {
+                onrendered: function(canvas) {
                     theCanvas = canvas;
                     document.body.appendChild(canvas);
                     console.log(canvas);
@@ -333,12 +339,12 @@ phonecatControllers.controller('certificate',
     });
 
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
-    function ($scope, TemplateService) {
+    function($scope, TemplateService) {
         $scope.template = TemplateService;
     }
 ]);
 phonecatControllers.controller('select',
-    function ($scope, TemplateService, $location) {
+    function($scope, TemplateService, $location) {
         $scope.template = TemplateService;
         $scope.myInterval = 100000;
         $scope.slides = [{
@@ -352,22 +358,22 @@ phonecatControllers.controller('select',
             "mode": "Tent Mode"
         }];
 
-        $scope.gotocertificate = function (i) {
+        $scope.gotocertificate = function(i) {
             $.jStorage.set("mode", i);
             $location.path("/certificate");
         };
     });
 phonecatControllers.controller('sync',
-    function ($scope, TemplateService, NavigationService, MyDatabase) {
+    function($scope, TemplateService, NavigationService, MyDatabase) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Sync");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/sync.html';
 
-        $scope.syncreview = function (userdata) {
-            db.transaction(function (tx) {
-                tx.executeSql('SELECT * FROM REVIEW WHERE `userid` = ' + userdata.id, [], function (tx, results) {
+        $scope.syncreview = function(userdata) {
+            db.transaction(function(tx) {
+                tx.executeSql('SELECT * FROM REVIEW WHERE `userid` = ' + userdata.id, [], function(tx, results) {
                     for (var i = 0; i < results.rows.length; i++) {
                         console.log(results.rows.item(0));
                         MyDatabase.sync(userdata, results.rows.item(0));
@@ -378,13 +384,13 @@ phonecatControllers.controller('sync',
                             });*/
                         //tx.executeSql('UPDATE USERS SET `sync`= 1 WHERE `id` =' + results.rows.item(i).id);
                     }
-                }, function (tx, results) {})
+                }, function(tx, results) {})
             });
         };
 
-        $scope.sendtodb = function () {
-            db.transaction(function (tx) {
-                tx.executeSql('SELECT * FROM USERS WHERE `sync` = 0', [], function (tx, results) {
+        $scope.sendtodb = function() {
+            db.transaction(function(tx) {
+                tx.executeSql('SELECT * FROM USERS WHERE `sync` = 0', [], function(tx, results) {
                     for (var i = 0; i < results.rows.length; i++) {
                         console.log(results.rows.item(i));
                         $scope.syncreview(results.rows.item(i));
@@ -398,7 +404,7 @@ phonecatControllers.controller('sync',
                     if (results.rows.length == 0) {
                         console.log("No data to sync");
                     };
-                }, function (tx, results) {
+                }, function(tx, results) {
                     console.log("No data to sync");
                 })
             });

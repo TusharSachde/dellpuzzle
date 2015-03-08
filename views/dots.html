@@ -4,22 +4,12 @@
         <div class="times"> {{mins}}:{{seconds}}</div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function()
-		{
-            $("#canvase").jqScribble({width:"1233",height:"564",backgroundColor:"rgba(0,0,0,0)"});
-        $('.clear').click(function() {
-            /*$('#canvase').data('jqScribble').clear();*/
-            $('#canvase').data('jqScribble').save()
-        });
-        
-		});
-    </script>
+
 <div class="white-overlay">
     <h2>Connect the Dots</h2>
-    <div class="writehere1" >
-    <canvas id="canvase" width="576px;" class="writehere2"></canvas>
-</div>
+    <div class="text-center" ng-click="changenumber();">
+        <img ng-src="img/dots/connect_{{connectnumber}}.png" alt="">
+    </div>
 </div>
 
 
