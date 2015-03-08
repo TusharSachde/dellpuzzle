@@ -13,7 +13,7 @@ firstapp.config(['$routeProvider',
             controller: 'areyou'
         }).
         when('/dots', {
-            templateUrl: "views/dots.html",
+            templateUrl: dotstemplate,
             controller: 'dots'
         }).
         when('/message', {
@@ -29,7 +29,7 @@ firstapp.config(['$routeProvider',
             controller: 'jersey'
         }).
         when('/think', {
-            template: thinktemplate,
+            templateUrl: "views/think.html",
             controller: 'think'
         }).
         when('/select', {

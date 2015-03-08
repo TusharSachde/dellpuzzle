@@ -115,7 +115,7 @@ body {
     margin: 0;
 }
 .white-overlay {
-    background-color: rgba(255, 255, 255, 0.55);
+    background-color: rgba(255, 255, 255, 0.75);
     min-height: 500px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -485,4 +485,9 @@ textarea {
     background: rgba(0, 0, 255, 0);
     position: absolute;
     top: 10px;
+}
+.white-overlay.thinkpage {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
 }
