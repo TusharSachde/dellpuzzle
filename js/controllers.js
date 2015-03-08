@@ -56,16 +56,22 @@ phonecatControllers.controller('areyou',
     });
 
 phonecatControllers.controller('dots',
-    function($scope, TemplateService, NavigationService, $interval, $location, MyDatabase) {
+    function($scope, TemplateService, NavigationService, $interval, $location, MyDatabase, $timeout) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Connect the dots");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         TemplateService.content = 'views/dots.html';
-        $scope.connectnumber = 1;
-        $scope.changenumber = function() {
-            if ($scope.connectnumber < 21) {
-                $scope.connectnumber++;
+        $scope.connectnumber = 0;
+        var completedots = function() {
+            $scope.connectnumber = 21;
+        }
+        $scope.changenumber = function(newnumber) {
+            if ($scope.connectnumber == (newnumber - 1)) {
+                $scope.connectnumber = newnumber;
+                if (newnumber == 20) {
+                    $timeout(completedots, 1000, false);
+                }
             }
         };
 
