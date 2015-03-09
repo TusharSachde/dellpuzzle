@@ -379,7 +379,9 @@ phonecatControllers.controller('sync',
 
 
         var updateuser = function (data, status) {
-            tx.executeSql('UPDATE `USERS` SET `sync`= 1 WHERE `id` =' + data.id);
+            db.transaction(function (tx) {
+                tx.executeSql('UPDATE `USERS` SET `sync`= 1 WHERE `id` =' + data.id);
+            });
         };
         $scope.syncreview = function (userdata) {
             db.transaction(function (tx) {
