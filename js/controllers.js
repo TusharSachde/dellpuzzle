@@ -357,11 +357,11 @@ phonecatControllers.controller('select',
             "image": "laptop1.png",
             "mode": "Laptop Mode"
         }, {
-            "image": "laptop2.png",
-            "mode": "Display Mode"
-        }, {
             "image": "laptop3.png",
             "mode": "Tent Mode"
+        },{
+            "image": "laptop2.png",
+            "mode": "Display Mode"
         }];
 
         $scope.gotocertificate = function(i) {
