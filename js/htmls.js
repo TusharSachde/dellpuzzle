@@ -13,7 +13,7 @@ hometemplate += "                    <input type=\"text\" required=\"required\" 
 hometemplate += "                    <input type=\"email\" class=\"form-control\" placeholder=\"Email Id\" ng-model=\"submit.email\">";
 hometemplate += "                    <input type=\"text\" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class=\"form-control\" placeholder=\"Mobile Number\" ng-model=\"submit.phone\">";
 hometemplate += "                    <div class=\"text-center\">";
-hometemplate += "                        <button class=\"btn btn-default btn-dell\" type=\"submit\" ng-hide=\"submit.name=='' || submit.email=='' || submit.phone==''\" ng-click=\"register(submit);\">Submit<\/button>";
+hometemplate += "                        <button class=\"btn btn-default btn-dell\" type=\"submit\" ng-hide=\"submit.name=='' || submit.email=='' || submit.phone=='' || !submit.email\" ng-click=\"register(submit);\">Submit<\/button>";
 hometemplate += "                    <\/div>";
 hometemplate += "                <\/form>";
 hometemplate += "            <\/div>";
@@ -23,6 +23,7 @@ hometemplate += "            <img src=\"img\/laptop.png\" alt=\"\" class=\"img-r
 hometemplate += "        <\/div>";
 hometemplate += "    <\/div>";
 hometemplate += "<\/div>";
+
 
 
 
