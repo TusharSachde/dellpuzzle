@@ -1,5 +1,5 @@
 var db = openDatabase('dellpuzzle', '1.0', 'Dell DB', 2 * 1024 * 1024);
-var adminurl = "http://localhost/dellsync/index.php/"
+var adminurl = "http://dellallrounder.in/index.php/";
 
 
 db.transaction(function (tx) {
