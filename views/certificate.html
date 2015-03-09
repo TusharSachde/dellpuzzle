@@ -1,23 +1,47 @@
+<script>
+    $(document).ready(function () {
+        $(".logout").click(function () {
+            html2canvas($("#savearea"), {
+                onrendered: function (canvas) {
+                    theCanvas = canvas;
+                    document.body.appendChild(canvas);
+                    console.log(canvas);
+                    var dataUrl = canvas.toDataURL();
+                    console.log(dataUrl);
+                    //MyDatabase.setcertificate(dataUrl);
+                    // Convert and download as image
+                    //console.log(Canvas2Image.convertToPNG(canvas, 500, 500));
+                    //Canvas2Image.saveAsPNG(canvas);
+                    //$("#img-out").append(canvas);
+                    // Clean up 
+                    document.body.removeChild(canvas);
+                }
+            });
+        });
+
+    });
+</script>
+
 <div class="white-head text-center lower no-margin">
     <h3>Continue your participation</h3>
     <div class="blue">
         <h4>Visit www.dellallrounder.in</h4>
     </div>
-<div class="centerlaptop">
-    <div id="savearea" class="text-center">
-        <div class="laptop"  ng-class="laptopclass">
-            <div class="">
-                <div class="certitext">
-                    <p class="nameclass" style="font-size:24px">{{uname}}</p>
-                    <p>completed the</br> Dell All Rounder Challenge </br>in {{mins}} mins and {{seconds}} seconds</p>
+    <div class="centerlaptop">
+        <div id="savearea" class="text-center">
+            <div class="laptop" ng-class="laptopclass">
+                <div class="">
+                    <div class="certitext">
+                        <p class="nameclass" style="font-size:24px">{{uname}}</p>
+                        <p>completed the</br> Dell All Rounder Challenge </br>in {{mins}} mins and {{seconds}} seconds</p>
+                    </div>
+                    <img class="messageimage">
                 </div>
-                <img class="messageimage">
             </div>
         </div>
     </div>
-</div>
-<div id="img-out"></div>
-<div class="padding-20 text-center">
-    <!--<button class="btn btn-default btn-dell clear btnSave">Save</button>-->
-    <button class="btn btn-default btn-dell clear" ng-click="logout();">Logout</button>
-</div>
+    <div id="img-out"></div>
+    <div class="padding-20 text-center">
+        <!--<button class="btn btn-default btn-dell clear btnSave">Save</button>-->
+        <button class="btn btn-default btn-dell clear logout" ng-click="">Logout</button>
+    </div>

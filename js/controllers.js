@@ -320,22 +320,7 @@ phonecatControllers.controller('certificate',
 
 
         $scope.logout = function () {
-            html2canvas($("#savearea"), {
-                onrendered: function (canvas) {
-                    theCanvas = canvas;
-                    document.body.appendChild(canvas);
-                    console.log(canvas);
-                    var dataUrl = canvas.toDataURL();
-                    console.log(dataUrl);
-                    MyDatabase.setcertificate(dataUrl);
-                    // Convert and download as image
-                    //console.log(Canvas2Image.convertToPNG(canvas, 500, 500));
-                    //Canvas2Image.saveAsPNG(canvas);
-                    //$("#img-out").append(canvas);
-                    // Clean up 
-                    document.body.removeChild(canvas);
-                }
-            });
+            
             //MyDatabase.setmins(0);
             //MyDatabase.setseconds(0);
             $.jStorage.set("mins", 0);
