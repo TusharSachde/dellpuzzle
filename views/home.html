@@ -8,11 +8,11 @@
         <div class="col-md-5">
             <div class="padding-top dell-input">
                 <form ng-submit="register(submit);">
-                    <input type="text" required = "required" class="form-control" placeholder="Name" ng-model="submit.name">
+                    <input type="text" required="required" class="form-control" placeholder="Name" ng-model="submit.name">
                     <input type="email" class="form-control" placeholder="Email Id" ng-model="submit.email">
                     <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" placeholder="Mobile Number" ng-model="submit.phone">
                     <div class="text-center">
-                        <button class="btn btn-default btn-dell" type="submit" ng-click="register(submit);">Submit</button>
+                        <button class="btn btn-default btn-dell" type="submit" ng-hide="submit.name=='' || submit.email=='' || submit.phone==''" ng-click="register(submit);">Submit</button>
                     </div>
                 </form>
             </div>
