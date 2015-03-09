@@ -1,27 +1,3 @@
-<script>
-    $(document).ready(function () {
-        $(".logout").click(function () {
-            html2canvas($("#savearea"), {
-                onrendered: function (canvas) {
-                    theCanvas = canvas;
-                    document.body.appendChild(canvas);
-                    console.log(canvas);
-                    var dataUrl = canvas.toDataURL();
-                    console.log(dataUrl);
-                    //MyDatabase.setcertificate(dataUrl);
-                    // Convert and download as image
-                    //console.log(Canvas2Image.convertToPNG(canvas, 500, 500));
-                    //Canvas2Image.saveAsPNG(canvas);
-                    //$("#img-out").append(canvas);
-                    // Clean up 
-                    document.body.removeChild(canvas);
-                }
-            });
-        });
-
-    });
-</script>
-
 <div class="white-head text-center lower no-margin">
     <h3>Continue your participation</h3>
     <div class="blue">
@@ -43,5 +19,5 @@
     <div id="img-out"></div>
     <div class="padding-20 text-center">
         <!--<button class="btn btn-default btn-dell clear btnSave">Save</button>-->
-        <button class="btn btn-default btn-dell clear logout" ng-click="">Logout</button>
+        <button class="btn btn-default btn-dell clear logout" ng-click="logout();">Logout</button>
     </div>
