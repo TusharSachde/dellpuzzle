@@ -354,12 +354,12 @@ phonecatControllers.controller('certificate',
         }
         //$scope.canvascolor = "white";
         $scope.certificate = "";
-        $scope.$on('$viewContentLoaded', function () {
+        /*$scope.$on('$viewContentLoaded', function () {
             $timeout(saveimage, 2000, false);
 
-        });
+        });*/
 
-
+$scope.showlogout = 1;
         $scope.logout = function () {
 
 
@@ -368,7 +368,7 @@ phonecatControllers.controller('certificate',
 
             //MyDatabase.setmins(0);
             //MyDatabase.setseconds(0);
-
+            MyDatabase.setcertificate(mode);
             $.jStorage.set("mins", 0);
             $.jStorage.set("seconds", 0);
             $location.path("/home");
