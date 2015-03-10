@@ -311,24 +311,26 @@ certitemplate += "    <h3>Continue your participation<\/h3>";
 certitemplate += "    <div class=\"blue\">";
 certitemplate += "        <h4>Visit www.dellallrounder.in<\/h4>";
 certitemplate += "    <\/div>";
-certitemplate += "<div class=\"centerlaptop\">";
-certitemplate += "    <div id=\"savearea\" class=\"text-center\" ng-class='canvascolor' >";
-certitemplate += "        <div class=\"laptop\"  ng-class=\"laptopclass\">";
-certitemplate += "            <div class=\"\">";
-certitemplate += "                <div class=\"certitext\">";
-certitemplate += "                    <p class=\"nameclass\" style=\"font-size:24px\">{{uname}}<\/p>";
-certitemplate += "                    <p>completed the<\/br> Dell All Rounder Challenge <\/br>in {{mins}} mins and {{seconds}} seconds<\/p>";
+certitemplate += "    <div class=\"centerlaptop\">";
+certitemplate += "        <div id=\"savearea\" class=\"text-center\" ng-class=\"canvascolor\" >";
+certitemplate += "           <div class=\"whitebg\"><\/div>";
+certitemplate += "            <div class=\"laptop\" ng-class=\"laptopclass\">";
+certitemplate += "                <div class=\"\">";
+certitemplate += "                    <div class=\"certitext\">";
+certitemplate += "                        <p class=\"nameclass\" style=\"font-size:24px\">{{uname}}<\/p>";
+certitemplate += "                        <p>completed the<\/br> Dell All Rounder Challenge <\/br>in {{mins}} mins and {{seconds}} seconds<\/p>";
+certitemplate += "                    <\/div>";
+certitemplate += "                    <img class=\"messageimage\">";
 certitemplate += "                <\/div>";
-certitemplate += "                <img class=\"messageimage\">";
 certitemplate += "            <\/div>";
 certitemplate += "        <\/div>";
 certitemplate += "    <\/div>";
-certitemplate += "<\/div>";
-certitemplate += "<div id=\"img-out\"><\/div>";
-certitemplate += "<div class=\"padding-20 text-center\">";
-certitemplate += "    <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
-certitemplate += "    <button class=\"btn btn-default btn-dell clear\" ng-show='showlogout==1' ng-click=\"logout();\">Logout<\/button>";
-certitemplate += "<\/div>";
+certitemplate += "    <div id=\"img-out\"><\/div>";
+certitemplate += "    <div class=\"padding-20 text-center\">";
+certitemplate += "        <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
+certitemplate += "        <button class=\"btn btn-default btn-dell clear logout\" ng-show='showlogout==1' ng-click=\"logout();\">Logout<\/button>";
+certitemplate += "    <\/div>";
+
 
 
 
