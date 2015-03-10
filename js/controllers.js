@@ -325,6 +325,7 @@ phonecatControllers.controller('certificate',
                 }, function (tx, results) {});
             });
         };
+    
 
         function saveimage() {
             html2canvas($("#savearea"), {
@@ -332,7 +333,7 @@ phonecatControllers.controller('certificate',
                     theCanvas = canvas;
                     //document.body.appendChild(canvas);
                     //console.log(canvas);
-
+                    canvas.setAttribute('crossOrigin', 'anonymous');
                     var dataUrl = canvas.toDataURL('image/jpeg', 0.7);
                     console.log(dataUrl);
                     $scope.certificate = dataUrl;
