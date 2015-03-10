@@ -89,9 +89,10 @@ dotstemplate += "";
 dotstemplate += "";
 dotstemplate += "<div class=\"padding-20 text-center\">";
 dotstemplate += "    <!--<button class=\"btn btn-default btn-dell\" href=\"#\/message\">Submit<\/button>-->";
-dotstemplate += "    <button class=\"btn btn-default btn-dell submit\" ng-click=\"gotomessage();\">Submit<\/button>";
+dotstemplate += "    <button class=\"btn btn-default btn-dell submit\" ng-show=\"participated\" ng-click=\"gotomessage();\">Submit<\/button>";
 dotstemplate += "<\/div>";
 dotstemplate += "";
+
 
 
 
