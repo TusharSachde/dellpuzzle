@@ -4,7 +4,7 @@
         <h4>Visit www.dellallrounder.in</h4>
     </div>
     <div class="centerlaptop">
-        <div id="savearea" class="text-center">
+        <div id="savearea" class="text-center" ng-class="canvascolor" >
             <div class="laptop" ng-class="laptopclass">
                 <div class="">
                     <div class="certitext">
@@ -19,5 +19,5 @@
     <div id="img-out"></div>
     <div class="padding-20 text-center">
         <!--<button class="btn btn-default btn-dell clear btnSave">Save</button>-->
-        <button class="btn btn-default btn-dell clear logout" ng-click="logout();">Logout</button>
+        <button class="btn btn-default btn-dell clear logout" ng-show='showlogout==1' ng-click="logout();">Logout</button>
     </div>

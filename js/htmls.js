@@ -311,7 +311,7 @@ certitemplate += "    <div class=\"blue\">";
 certitemplate += "        <h4>Visit www.dellallrounder.in<\/h4>";
 certitemplate += "    <\/div>";
 certitemplate += "<div class=\"centerlaptop\">";
-certitemplate += "    <div id=\"savearea\" class=\"text-center\">";
+certitemplate += "    <div id=\"savearea\" class=\"text-center\" ng-class='canvascolor' >";
 certitemplate += "        <div class=\"laptop\"  ng-class=\"laptopclass\">";
 certitemplate += "            <div class=\"\">";
 certitemplate += "                <div class=\"certitext\">";
@@ -326,7 +326,7 @@ certitemplate += "<\/div>";
 certitemplate += "<div id=\"img-out\"><\/div>";
 certitemplate += "<div class=\"padding-20 text-center\">";
 certitemplate += "    <!--<button class=\"btn btn-default btn-dell clear btnSave\">Save<\/button>-->";
-certitemplate += "    <button class=\"btn btn-default btn-dell clear\" ng-click=\"logout();\">Logout<\/button>";
+certitemplate += "    <button class=\"btn btn-default btn-dell clear\" ng-show='showlogout==1' ng-click=\"logout();\">Logout<\/button>";
 certitemplate += "<\/div>";
 
 

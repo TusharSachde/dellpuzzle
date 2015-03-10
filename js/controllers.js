@@ -260,7 +260,7 @@ phonecatControllers.controller('think',
     });
 
 phonecatControllers.controller('certificate',
-    function($scope, TemplateService, NavigationService, $location, MyDatabase) {
+    function($scope, TemplateService, NavigationService, $location, MyDatabase, $timeout) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("Thank You");
         TemplateService.title = $scope.menutitle;
@@ -316,28 +316,39 @@ phonecatControllers.controller('certificate',
                 }, function(tx, results) {});
             });
         };
-        $scope.certificate = "";
-        $scope.$on('$viewContentLoaded', function() {
+
+        function saveimage() {
             html2canvas($("#savearea"), {
                 onrendered: function(canvas) {
                     theCanvas = canvas;
-                    document.body.appendChild(canvas);
-                    console.log(canvas);
-                    var dataUrl = canvas.toDataURL();
+                    //document.body.appendChild(canvas);
+                    //console.log(canvas);
+
+                    var dataUrl = canvas.toDataURL('image/jpeg', 0.7);
                     console.log(dataUrl);
-                    $scope.certificate=dataUrl;
+                    $scope.certificate = dataUrl;
                     MyDatabase.setcertificate(dataUrl);
                     // Convert and download as image
                     //console.log(Canvas2Image.convertToPNG(canvas, 500, 500));
                     //Canvas2Image.saveAsPNG(canvas);
                     //$("#img-out").append(canvas);
                     // Clean up 
-                    document.body.removeChild(canvas);
-                    console.log($scope.certificate);
-                }
+                    //document.body.removeChild(canvas);
+
+                    $scope.showlogout = 1;
+                    $scope.canvascolor = "";
+                    $scope.$apply();
+                },
+                background: "#f00"
             });
+        }
+        $scope.canvascolor = "white";
+        $scope.certificate = "";
+        $scope.$on('$viewContentLoaded', function() {
+            $timeout(saveimage, 2000, false);
+
         });
-    
+
 
         $scope.logout = function() {
 

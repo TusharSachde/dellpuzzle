@@ -515,3 +515,10 @@ textarea {
 .thinkpage>.row>.col-md-6+.col-md-6 {
     border-left: 1px dotted;
 }
+#savearea {
+    width: 725px;
+    margin: 0 auto;
+}
+#savearea.white {
+    background: white;
+}
