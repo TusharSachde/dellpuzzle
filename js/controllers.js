@@ -326,7 +326,7 @@ phonecatControllers.controller('certificate',
             });
         };
     
-
+$scope.showlogout = 1;
         function saveimage() {
             html2canvas($("#savearea"), {
                 onrendered: function (canvas) {
