@@ -336,9 +336,6 @@ certitemplate += "    <\/div>";
 
 
 
-
-
-
 var synctemplate="";
 synctemplate += "<div class=\"white-overlay margin-100 relative\">";
 synctemplate += "    <div class=\"middle shadowed blue\">";
@@ -348,6 +345,10 @@ synctemplate += "";
 synctemplate += "        <div class=\"padding-20 text-center\">";
 synctemplate += "            <button class=\"btn btn-default btn-dell\" ng-click=\"sendtodb();\">Sync Now<\/button>";
 synctemplate += "        <\/div>";
+synctemplate += "        ";
+synctemplate += "        <div class=\"padding-20 text-center\" style=\"font-size:13px;\" >";
+synctemplate += "            {{synctext}}";
+synctemplate += "            ";
+synctemplate += "        <\/div>";
 synctemplate += "    <\/div>";
 synctemplate += "<\/div>";
-
