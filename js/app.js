@@ -41,7 +41,7 @@ firstapp.config(['$routeProvider',
             controller: 'certificate'
         }).
         when('/sync', {
-            template: synctemplate,
+            templateUrl: "views/sync.html",
             controller: 'sync'
         }).
         otherwise({
