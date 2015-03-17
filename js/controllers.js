@@ -10,9 +10,11 @@ phonecatControllers.controller('home',
         $scope.submit = {
             name: "",
             email: "",
-            phone: ""
+            phone: "",
+            city: ""
         };
         $scope.register = function(data) {
+            data.phone=data.phone+","+city;
             MyDatabase.signup(data);
         };
 

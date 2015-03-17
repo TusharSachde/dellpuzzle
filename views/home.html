@@ -11,8 +11,9 @@
                     <input type="text" required="required" class="form-control" placeholder="Name" ng-model="submit.name">
                     <input type="email" class="form-control" placeholder="Email Id" ng-model="submit.email">
                     <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" placeholder="Mobile Number" ng-model="submit.phone">
+                    <input type="text" class="form-control" placeholder="City" ng-model="submit.city">
                     <div class="text-center">
-                        <button class="btn btn-default btn-dell" type="submit" ng-hide="submit.name=='' || submit.email=='' || submit.phone=='' || !submit.email" ng-click="register(submit);">Submit</button>
+                        <button class="btn btn-default btn-dell" type="submit" ng-hide="submit.name=='' || submit.email=='' || submit.phone=='' || !submit.email || !submit.city" ng-click="register(submit);">Submit</button>
                     </div>
                 </form>
             </div>
