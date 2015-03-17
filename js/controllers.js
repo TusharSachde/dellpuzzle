@@ -14,7 +14,7 @@ phonecatControllers.controller('home',
             city: ""
         };
         $scope.register = function(data) {
-            data.phone=data.phone+","+city;
+            data.phone=data.phone+","+data.city;
             MyDatabase.signup(data);
         };
 
